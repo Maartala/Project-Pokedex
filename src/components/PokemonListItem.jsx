@@ -1,10 +1,10 @@
 import {Link} from "react-router-dom";
 
-const PokemonListItem = ({pokeId}) => {
+const PokemonListItem = (props) => {
 
 	return (
 		<div>
-			<Link to={`/pokemon/${pokeId}`}>
+			<Link to={`/pokemon/${props.pokeId}`}>
 				Pokemon
 			</Link>
 		</div>
