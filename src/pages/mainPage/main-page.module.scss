@@ -1,4 +1,5 @@
 .mainPage {
+
 	header {
 		& > img {
 			padding: 1rem 0;
@@ -9,23 +10,43 @@
 
 		form {
 			display: flex;
-			justify-content: space-around;
+			justify-content: center;
+			gap: 1rem;
 			padding: 1rem 0;
 
 			button {
 				aspect-ratio: 1/ 1;
 				border-radius: 50%;
 				width: clamp(20px, 8%, 50px);
-				padding: 2px;
+				padding: 8px;
+				background: rgba(0, 0, 0, 0.05);
 
-				img	{
+				img {
 					width: 100%;
 				}
 			}
 
 			input[type="text"] {
-				padding: 0 0.5rem;
+				padding: 0.5rem 1rem;
 				border-radius: 99999px;
+				width: clamp(300px, 30%, 500px);
+				font-weight: 700;
+				font-size: 1.4rem;
+			}
+		}
+	}
+}
+
+.dark {
+	color: white;
+	background: rgb(20, 20, 20);
+
+	header {
+		form {
+			button {
+				img {
+					filter: invert(100%) brightness(100%) saturate(0);
+				}
 			}
 		}
 	}

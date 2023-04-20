@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import PokemonList from "../../components/PokemonList/PokemonList.jsx";
 import {Link} from "react-router-dom";
 
@@ -9,14 +9,18 @@ import hamburgerMenuIcon from "../../assets/img/icons/hamburger-menu-icon.svg";
 import lightThemeIcon from "../../assets/img/icons/light-theme-icon.svg";
 import darkThemeIcon from "../../assets/img/icons/dark-theme-icon.svg";
 
-const MainPage = () => {
-	const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
 
-	const themeIcon = isDarkModeEnabled ? lightThemeIcon : darkThemeIcon;
+const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 
 	useEffect(() => {
-		if (isDarkModeEnabled) {
-
+		const app = document.getElementById("app");
+		if(isDarkModeEnabled){
+			app.classList.remove("light");
+			app.classList.add(styles.dark);
+		}
+		else {
+			app.classList.remove(styles.dark);
+			app.classList.add("light");
 		}
 	}, [isDarkModeEnabled]);
 
@@ -25,16 +29,16 @@ const MainPage = () => {
 	};
 
 	return (
-		<div className={styles.mainPage}>
+		<div id="mainPage" className={styles.mainPage}>
 			<header>
 				<img src={pokemonTitle} alt="Pokemon"/>
-				<form action="#">
+				<form action="#" onSubmit={(event) => event.preventDefault()}>
 					<button>
 						<img src={hamburgerMenuIcon} alt="Menu"/>
 					</button>
 					<input type="text"/>
 					<button onClick={toggleTheme}>
-						<img src={themeIcon} alt="theme-toggle"/>
+						<img src={isDarkModeEnabled ? lightThemeIcon : darkThemeIcon} alt="theme-toggle"/>
 					</button>
 				</form>
 			</header>
