@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import style from './PokemonListItem.module.css'
 
 const PokemonListItem = (props) => {
 
@@ -24,12 +25,16 @@ const PokemonListItem = (props) => {
 	// console.log(pic);
 	// console.log(id);
 	return (
-		<div>
-			<h2>#{id}</h2>
-			<Link to={`/pokemon/${id}`} state={pokemonDetails}>
-				<img src={pic} alt={props.name} />
-			</Link>
-			<h2>{props.name}</h2>
+		<div className={style.pokemonListItem}>
+			<article>
+				<Link to={`/pokemon/${id}`} state={pokemonDetails}>
+					<img src={pic} alt={props.name} />
+				</Link>
+			</article>
+			<div>
+				<h2>#{id}</h2>
+				<h2>{props.name}</h2>
+			</div>
 		</div>
 	);
 };
