@@ -35,6 +35,13 @@
 			}
 		}
 	}
+	aside {
+		width: 80vw;
+		position: fixed;
+		top: 0;
+		left: -80vw;
+		bottom: 0;
+	}
 }
 
 .dark {
