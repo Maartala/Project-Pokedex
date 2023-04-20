@@ -2,4 +2,11 @@
   margin: 0 auto;
 
   text-align: center;
+
+
+}
+
+.App {
+  transition-property: background, color;
+  transition-duration: 500ms;
 }
