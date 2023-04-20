@@ -1,0 +1,32 @@
+.mainPage {
+	header {
+		& > img {
+			padding: 1rem 0;
+
+			margin: 0 auto;
+			width: clamp(200px, 80vw, 300px);
+		}
+
+		form {
+			display: flex;
+			justify-content: space-around;
+			padding: 1rem 0;
+
+			button {
+				aspect-ratio: 1/ 1;
+				border-radius: 50%;
+				width: clamp(20px, 8%, 50px);
+				padding: 2px;
+
+				img	{
+					width: 100%;
+				}
+			}
+
+			input[type="text"] {
+				padding: 0 0.5rem;
+				border-radius: 99999px;
+			}
+		}
+	}
+}
