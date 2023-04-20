@@ -1,7 +1,113 @@
+.pokemontypes {
+    margin: 2% 25%;
+    background-color: #CCDADD;
+}
+
+.pokemontypes h2 {
+    margin-bottom: 5%;
+    color: #FFCB05;
+    text-shadow: 4px 4px #2C72B8;
+    /* text-shadow: 4px 4px #2C72B8; */
+
+}
+
+.pokemontypes form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+
+
 .pokemontypes a {
-    padding: 2% 5%;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    margin: 2%;
+    border-radius: 5px;
+    border: solid black 1px;
+    width: 12rem;
 }
 
 .pokemontypes a:nth-of-type(1) {
-    background-color: red;
+    background-color: #B3B3B3;
 }
+
+.pokemontypes a:nth-of-type(2) {
+    background-color: #E40000;
+}
+
+.pokemontypes a:nth-of-type(3) {
+    background-color: #CCDADD;
+}
+
+.pokemontypes a:nth-of-type(4) {
+    background-color: #AB00AE;
+}
+
+.pokemontypes a:nth-of-type(5) {
+    background-color: #965A00;
+}
+
+.pokemontypes a:nth-of-type(6) {
+    background-color: #E1B237;
+}
+
+.pokemontypes a:nth-of-type(7) {
+    background-color: #3BB900;
+}
+
+.pokemontypes a:nth-of-type(8) {
+    background-color: #5A1E64;
+}
+
+.pokemontypes a:nth-of-type(9) {
+    background-color: #2A4950;
+}
+
+.pokemontypes a:nth-of-type(10) {
+    background-color: #FF9900;
+}
+
+.pokemontypes a:nth-of-type(11) {
+    background-color: #00A0E4;
+}
+
+.pokemontypes a:nth-of-type(12) {
+    background-color: #57921C;
+}
+
+.pokemontypes a:nth-of-type(13) {
+    background-color: #FFE600;
+}
+
+.pokemontypes a:nth-of-type(14) {
+    background-color: #FF81F2;
+}
+
+.pokemontypes a:nth-of-type(15) {
+    background-color: #6AD2FF;
+}
+
+.pokemontypes a:nth-of-type(16) {
+    background-color: #00458A;
+}
+
+.pokemontypes a:nth-of-type(17) {
+    background-color: #1C1C1C
+}
+
+.pokemontypes a:nth-of-type(18) {
+    background-color: #FFC2F9;
+}
+
+.pokemontypes a:nth-of-type(19) {
+    background-color: #B3B3B3;
+}
+
+.pokemontypes a:nth-of-type(20) {
+    background-color: #B3B3B3;
+}
+
+.dark {}
