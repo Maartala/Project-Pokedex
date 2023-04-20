@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import PokemonList from "../../components/PokemonList/PokemonList.jsx";
-import {Link} from "react-router-dom";
 
 import styles from "./mainPage.module.scss";
 
@@ -11,9 +10,22 @@ import darkThemeIcon from "../../assets/img/icons/dark-theme-icon.svg";
 import PokemonTypes from "../../components/PokemonTypes/PokemonTypes.jsx";
 
 
+
+
 const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 
 	const [isMenuExpanded, setIsMenuExpanded] = useState(false);
+
+	const toggleTheme = () => {
+		setIsDarkModeEnabled(!isDarkModeEnabled);
+	};
+
+	const clickListener = (event) => {
+		console.log("clicked");
+		if(!(event.target === document.getElementById("typeMenu"))){
+			setIsMenuExpanded(false);
+		}
+	}
 
 	useEffect(() => {
 		const app = document.getElementById("app");
@@ -31,25 +43,21 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 		const typeMenu = document.getElementById("typeMenu");
 		if(isMenuExpanded){
 			typeMenu.style.left = "0";
+			document.addEventListener("click", clickListener, true);
 		}
 		else {
-			typeMenu.style.left = "-80vw";
+			typeMenu.style.left = "-100%";
+			document.removeEventListener("click", clickListener, true);
 		}
-	})
 
-	const expandTypeMenu = () => {
-		setIsMenuExpanded(!isMenuExpanded)
-	}
-	const toggleTheme = () => {
-		setIsDarkModeEnabled(!isDarkModeEnabled);
-	};
+	}, [isMenuExpanded]);
 
 	return (
 		<div id="mainPage" className={styles.mainPage}>
 			<header>
 				<img src={pokemonTitle} alt="Pokemon"/>
 				<form action="#" onSubmit={(event) => event.preventDefault()}>
-					<button onClick={expandTypeMenu}>
+					<button onClick={() => setIsMenuExpanded(!isMenuExpanded)}>
 						<img src={hamburgerMenuIcon} alt="Menu"/>
 					</button>
 					<input type="text"/>
@@ -59,12 +67,8 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 				</form>
 			</header>
 			<aside id="typeMenu">
-				<PokemonTypes/>
+				<PokemonTypes />
 			</aside>
-
-			<Link to={"/pokemon/types"}>
-				Steffis Pokemon Types
-			</Link>
 			<PokemonList/>
 		</div>
 	);

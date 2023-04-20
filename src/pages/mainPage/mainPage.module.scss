@@ -1,5 +1,5 @@
 .mainPage {
-
+	position: relative;
 	header {
 		& > img {
 			padding: 1rem 0;
@@ -36,11 +36,14 @@
 		}
 	}
 	aside {
-		width: 80vw;
+		width: 500px;
 		position: fixed;
 		top: 0;
-		left: -80vw;
 		bottom: 0;
+		transition: left 500ms;
+		div {
+			height: 100%;
+		}
 	}
 }
 
