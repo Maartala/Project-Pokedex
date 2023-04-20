@@ -1,13 +1,13 @@
 import {useEffect, useState} from "react";
-import PokemonList from "../components/PokemonList.jsx";
+import PokemonList from "../../components/PokemonList/PokemonList.jsx";
 import {Link} from "react-router-dom";
 
 import styles from "./main-page.module.scss";
 
-import pokemonTitle from "../assets/img/pokemon-title.png";
-import hamburgerMenuIcon from "../assets/img/icons/hamburger-menu-icon.svg";
-import lightThemeIcon from "../assets/img/icons/light-theme-icon.svg";
-import darkThemeIcon from "../assets/img/icons/dark-theme-icon.svg";
+import pokemonTitle from "../../assets/img/pokemon-title.png";
+import hamburgerMenuIcon from "../../assets/img/icons/hamburger-menu-icon.svg";
+import lightThemeIcon from "../../assets/img/icons/light-theme-icon.svg";
+import darkThemeIcon from "../../assets/img/icons/dark-theme-icon.svg";
 
 const MainPage = () => {
 	const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);

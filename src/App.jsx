@@ -1,8 +1,8 @@
 import './App.scss';
 import {Route, Routes} from "react-router-dom";
-import MainPage from "./pages/MainPage.jsx";
-import DetailsPage from "./pages/DetailsPage.jsx";
-import PokemonTypes from "./components/PokemonTypes.jsx";
+import MainPage from "./pages/mainPage/MainPage.jsx";
+import DetailsPage from "./pages/detailsPage/DetailsPage.jsx";
+import PokemonTypes from "./components/PokemonTypes/PokemonTypes.jsx";
 
 function App() {
 
