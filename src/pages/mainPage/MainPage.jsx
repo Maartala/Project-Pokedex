@@ -46,7 +46,7 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 			document.addEventListener("click", clickListener, true);
 		}
 		else {
-			typeMenu.style.left = "-100%";
+			typeMenu.style.left = "-500px";
 			document.removeEventListener("click", clickListener, true);
 		}
 
