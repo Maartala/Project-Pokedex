@@ -1,1 +1,7 @@
-.pokemontypes {}
+.pokemontypes a {
+    padding: 2% 5%;
+}
+
+.pokemontypes a:nth-of-type(1) {
+    background-color: red;
+}
