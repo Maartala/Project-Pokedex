@@ -1,9 +1,9 @@
-import styles from './PokemonTypes/TypesList/TypesList.module.css';
+import style from './PokemonTypes/TypesList/TypesList.module.css';
 
 
 const TypesList = () => {
     return (
-        <div className='typeList'>
+        <div className={style.typeList}>
 
         </div>
     );

@@ -30,7 +30,7 @@ const PokemonTypes = () => {
 			<form action="" onSubmit={(() => preventDefault())}>
 				{allTypes.map((elt) => {
 					return (
-						<Link to={`/type/${elt.id}`}>{elt.name}</Link>
+						<Link to={`/types/${elt.id}`}>{elt.name}</Link>
 					)
 				})}
 
