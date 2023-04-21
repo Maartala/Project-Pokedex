@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import BerriesItem from "./BerriesItem";
+import style from './BerriesList.module.css'
 
 const BerriesList = () => {
 
@@ -8,16 +10,23 @@ const BerriesList = () => {
         fetch(`https://pokeapi.co/api/v2/berry`)
             .then(response => response.json())
             .then(json => {
-                setPokemon(json.results)
-                // console.log(json.results)
-                // console.log(json);
+                setBerries(json.results)
             });
     }, [])
-
+    console.log(berries);
     return (
-        <section>
+        <div className={style.berriesList}>
+            {berries.map((element, index) => {
+                return (
+                    <BerriesItem
+                        key={index}
+                        name={element.name}
+                        url={element.url}
+                    />
+                )
+            })}
 
-        </section>
+        </div>
     );
 }
 

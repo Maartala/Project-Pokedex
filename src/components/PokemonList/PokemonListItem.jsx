@@ -24,7 +24,7 @@ const PokemonListItem = (props) => {
 				setPokemonDetails(json)
 				// console.log(json.id);
 			})
-	})
+	}, [])
 	// console.log(pic);
 	// console.log(id);
 	return (

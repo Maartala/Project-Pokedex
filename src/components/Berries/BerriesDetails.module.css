@@ -1,0 +1,31 @@
+.berriesDetails {
+    width: 40%;
+    margin: 2rem auto;
+    background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+}
+
+.berriesDetails h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.berriesDetails div {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.2rem;
+}
+
+.berriesDetails a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 0.3rem 1.2rem;
+    border-radius: 15px;
+}
+
+.berriesDetails a:hover {
+    color: white;
+    background-color: #2C72B8;
+}
