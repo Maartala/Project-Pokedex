@@ -9,14 +9,16 @@ import BerriesList from "./components/Berries/BerriesList.jsx";
 import TypeDetailPage from "./pages/typesDetailPage/TypeDetailPage.jsx";
 import BerriesDetails from "./components/Berries/BerriesDetails.jsx";
 
+export const ThemeContext = createContext(false);
+
 function App() {
 	const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
 
-	const ThemeContext = createContext('theme');
+
 
 	return (
 		<div className="App" id="app">
-			<ThemeContext.Provider value="light">
+			<ThemeContext.Provider value={false}>
 				<Routes>
 					<Route path="/" element={<MainPage isDarkModeEnabled={isDarkModeEnabled} setIsDarkModeEnabled={setIsDarkModeEnabled}/>}>
 						<Route path="/pokemon" element={<PokemonList/>}/>

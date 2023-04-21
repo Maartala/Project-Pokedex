@@ -1,21 +1,21 @@
 import {useEffect, useState} from "react";
+import {Link, Outlet, useLocation, useNavigate} from "react-router-dom";
 
+import NavBar from "../../components/navigation/NavBar.jsx";
 import styles from "./mainPage.module.scss";
 
 import pokemonTitle from "../../assets/img/pokemon-title.png";
 import hamburgerMenuIcon from "../../assets/img/icons/hamburger-menu-icon.svg";
 import lightThemeIcon from "../../assets/img/icons/light-theme-icon.svg";
 import darkThemeIcon from "../../assets/img/icons/dark-theme-icon.svg";
-import {Link, Outlet, useLocation, useNavigate} from "react-router-dom";
-import NavBar from "../../components/navigation/NavBar.jsx";
-
 
 const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
+
 	const location = useLocation();
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		if(location.pathname === "/") {
+		if (location.pathname === "/") {
 			navigate("/pokemon");
 		}
 	}, []);
@@ -27,18 +27,17 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 	};
 
 	const clickListener = (event) => {
-		if(!(event.target === document.getElementById("typeMenu"))){
+		if (!(event.target === document.getElementById("typeMenu"))) {
 			setIsMenuExpanded(false);
 		}
-	}
+	};
 
 	useEffect(() => {
 		const app = document.getElementById("app");
-		if(isDarkModeEnabled){
+		if (isDarkModeEnabled) {
 			app.classList.remove("light");
 			app.classList.add(styles.dark);
-		}
-		else {
+		} else {
 			app.classList.remove(styles.dark);
 			app.classList.add("light");
 		}
@@ -46,11 +45,10 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 
 	useEffect(() => {
 		const typeMenu = document.getElementById("typeMenu");
-		if(isMenuExpanded){
+		if (isMenuExpanded) {
 			typeMenu.style.left = "0";
 			document.addEventListener("click", clickListener, true);
-		}
-		else {
+		} else {
 			typeMenu.style.left = "-500px";
 			document.removeEventListener("click", clickListener, true);
 		}
@@ -60,7 +58,7 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 	return (
 		<div id="mainPage" className={[styles.mainPage].join(" ")}>
 			<header>
-				<Link to="/">
+				<Link to="/pokemon">
 					<img src={pokemonTitle} alt="Pokemon"/>
 				</Link>
 				<form action="#" onSubmit={(event) => event.preventDefault()}>
