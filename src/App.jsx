@@ -7,11 +7,12 @@ import {createContext, useState} from "react";
 import PokemonList from "./components/PokemonList/PokemonList.jsx";
 import BerriesList from "./components/Berries/BerriesList.jsx";
 import TypeDetailPage from "./pages/typesDetailPage/TypeDetailPage.jsx";
+import BerriesDetails from "./components/Berries/BerriesDetails.jsx";
 
 function App() {
 	const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
 
-	const ThemeContext = createContext('light');
+	const ThemeContext = createContext('theme');
 
 	return (
 		<div className="App" id="app">
@@ -25,6 +26,7 @@ function App() {
 						<Route path="/types/:id" element={<TypeDetailPage/>}/>
 
 						<Route path="berries" element={<BerriesList/>}/>
+						<Route path="berries/:id" element={<BerriesDetails/>}/>
 					</Route>
 				</Routes>
 			</ThemeContext.Provider>

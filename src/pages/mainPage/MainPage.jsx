@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 
 import styles from "./mainPage.module.scss";
 
@@ -58,7 +58,7 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 	}, [isMenuExpanded]);
 
 	return (
-		<div id="mainPage" className={styles.mainPage}>
+		<div id="mainPage" className={[styles.mainPage].join(" ")}>
 			<header>
 				<Link to="/">
 					<img src={pokemonTitle} alt="Pokemon"/>
