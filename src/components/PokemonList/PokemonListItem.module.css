@@ -4,17 +4,15 @@
 
 .pokemonListItem article {
     background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
-    margin-top: 40px;
-    padding: 0 5vw 0 5vw;
     width: 200px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-
+    border-radius: 20px 20px 0 0;
+    padding: 1.5rem;
 }
 
 .pokemonListItem article img {
-    width: 150px;
-    height: 200px;
+    aspect-ratio: 1/1;
+    width: 100%;
+    object-fit: contain;
     text-align: center;
 }
 

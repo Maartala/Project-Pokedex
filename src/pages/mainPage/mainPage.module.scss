@@ -1,5 +1,6 @@
 .mainPage {
 	position: relative;
+	background: #ccdadd;
 
 	header {
 		& > img {
@@ -25,6 +26,8 @@
 				img {
 					aspect-ratio: 1/ 1;
 					width: 100%;
+					filter: none;
+
 				}
 			}
 
