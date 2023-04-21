@@ -6,6 +6,7 @@ import PokemonTypes from "./components/PokemonTypes/PokemonTypes.jsx";
 import {createContext, useState} from "react";
 import PokemonList from "./components/PokemonList/PokemonList.jsx";
 import BerriesList from "./components/Berries/BerriesList.jsx";
+import TypeDetailPage from "./pages/typesDetailPage/TypeDetailPage.jsx";
 
 function App() {
 	const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
@@ -21,6 +22,7 @@ function App() {
 						<Route path="/pokemon/:pokeid" element={<DetailsPage/>}/>
 
 						<Route path="/types" element={<PokemonTypes/>}/>
+						<Route path="/types/:id" element={<TypeDetailPage/>}/>
 
 						<Route path="berries" element={<BerriesList/>}/>
 					</Route>
