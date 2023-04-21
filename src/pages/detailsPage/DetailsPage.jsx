@@ -88,7 +88,6 @@ const DetailsPage = () => {
 			break;
 	}
 
-
 	let type2Class = '';
 	switch (fixedTypes2) {
 		case "Normal":
@@ -153,6 +152,7 @@ const DetailsPage = () => {
 	console.log(fixedTypes1);
 	console.log(fixedTypes2);
 
+
 	return (
 		<section className={styles.background}>
 			<section className={styles.bg_card}>
@@ -169,29 +169,41 @@ const DetailsPage = () => {
 							<p>{`Weight: ${pokemon.weight / 10} kg`}</p>
 						</div>
 						<div className={styles.stats}>
-							<div>
-								<p>HP:</p>
-								<p>{pokemon.stats[0].base_stat}</p>
+							<div className={styles.animation}>
+								<p>Health</p>
+								<div className={styles.fenster}>
+									<p className={styles.balken}>{pokemon.stats[0].base_stat}</p>
+								</div>
 							</div>
-							<div>
-								<p>Attack:</p>
-								<p>{pokemon.stats[1].base_stat}</p>
+							<div className={styles.animation}>
+								<p>Attack</p>
+								<div className={styles.fenster}>
+									<p className={styles.balken}>{pokemon.stats[1].base_stat}</p>
+								</div>
 							</div>
-							<div>
-								<p>Defense:</p>
-								<p>{pokemon.stats[2].base_stat}</p>
+							<div className={styles.animation}>
+								<p>Defense</p>
+								<div className={styles.fenster}>
+									<p className={styles.balken}>{pokemon.stats[2].base_stat}</p>
+								</div>
 							</div>
-							<div>
-								<p>Special-Attack:</p>
-								<p>{pokemon.stats[3].base_stat}</p>
+							<div className={styles.animation}>
+								<p>SP-Atk</p>
+								<div className={styles.fenster}>
+									<p className={styles.balken}>{pokemon.stats[3].base_stat}</p>
+								</div>
 							</div>
-							<div>
-								<p>Special-Defense:</p>
-								<p>{pokemon.stats[4].base_stat}</p>
+							<div className={styles.animation}>
+								<p>SP-Def</p>
+								<div className={styles.fenster}>
+									<p className={styles.balken}>{pokemon.stats[4].base_stat}</p>
+								</div>
 							</div>
-							<div>
-								<p>Speed:</p>
-								<p>{pokemon.stats[5].base_stat}</p>
+							<div className={styles.animation}>
+								<p>Speed</p>
+								<div className={styles.fenster}>
+									<p className={styles.balken} value={100}>{pokemon.stats[5].base_stat}</p>
+								</div>
 							</div>
 						</div>
 					</article>
