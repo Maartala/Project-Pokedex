@@ -7,21 +7,16 @@ import styles from './PokemonTypes.module.css';
 const PokemonTypes = () => {
 
 	const [allTypes, setAllTypes] = useState([]);
-	const [input, setInput] = useState("");
+
 
 	useEffect(() => {
-		fetch(`https://pokeapi.co/api/v2/type/${input}`)
+		fetch(`https://pokeapi.co/api/v2/type/`)
 			.then(res => res.json())
 			.then(data => setAllTypes(data.results))
-	}, [input])
-
-	const handleSearch = (event) => {
-		const selectedValue = event.target.value;
-		setInput(selectedValue);
-	};
+	}, [])
 
 
-	console.log(allTypes);
+	// console.log(allTypes);
 
 	return (
 		<div className={styles.pokemontypes}>
@@ -29,8 +24,9 @@ const PokemonTypes = () => {
 			<h2>TYPES</h2>
 			<form action="" onSubmit={(() => preventDefault())}>
 				{allTypes.map((elt) => {
+					// console.log(elt.name);
 					return (
-						<Link to={`/types/${elt.id}`}>{elt.name}</Link>
+						<Link key={elt.name} to={`/types/${elt.name}`}>{elt.name}</Link>
 					)
 				})}
 
