@@ -1,0 +1,58 @@
+.pokemon_card img {
+    width: 70%;
+    margin: 100px auto 0 auto;
+    background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
+    margin-top: 40px;
+    padding: 5vh 5vw 5vh 5vw;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.pokemon_card h2 {
+    width: 70%;
+    margin: 0 auto;
+    padding: 1vh 5vw 1vh 5vw;
+}
+
+.pokemon_card article {
+    width: 70%;
+    margin: 0 auto;
+    background-color: #FFCB05;
+    padding: 1vh 5vw 1vh 5vw;
+    border-top: 1px solid black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.types_flex {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.types_flex p {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2% 8%;
+    margin-top: 10px;
+}
+
+.weight {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.pokemon_card .stats {
+    padding-top: 20px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid black;
+}
+
+.pokemon_card .stats div {
+    display: flex;
+    justify-content: space-between;
+}
