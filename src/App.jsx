@@ -18,7 +18,7 @@ function App() {
 
 	return (
 		<div className="App" id="app">
-			<ThemeContext.Provider value={false}>
+			<ThemeContext.Provider value={isDarkModeEnabled}>
 				<Routes>
 					<Route path="/" element={<MainPage isDarkModeEnabled={isDarkModeEnabled} setIsDarkModeEnabled={setIsDarkModeEnabled}/>}>
 						<Route path="/pokemon" element={<PokemonList/>}/>
