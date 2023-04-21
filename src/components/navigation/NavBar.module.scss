@@ -1,0 +1,13 @@
+.navBar {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	padding: 1rem;
+
+	a {
+		font-weight: 700;
+		text-decoration: none;
+		padding: 1rem;
+	}
+}

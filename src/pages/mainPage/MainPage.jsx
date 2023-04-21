@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import PokemonList from "../../components/PokemonList/PokemonList.jsx";
 
 import styles from "./mainPage.module.scss";
 
@@ -7,12 +6,21 @@ import pokemonTitle from "../../assets/img/pokemon-title.png";
 import hamburgerMenuIcon from "../../assets/img/icons/hamburger-menu-icon.svg";
 import lightThemeIcon from "../../assets/img/icons/light-theme-icon.svg";
 import darkThemeIcon from "../../assets/img/icons/dark-theme-icon.svg";
-import PokemonTypes from "../../components/PokemonTypes/PokemonTypes.jsx";
+import {Outlet, useLocation, useNavigate} from "react-router-dom";
+import NavBar from "../../components/navigation/NavBar.jsx";
 
 
 
 
 const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
+	const location = useLocation();
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		if(location.pathname === "/") {
+			navigate("/pokemon")
+		}
+	}, [])
 
 	const [isMenuExpanded, setIsMenuExpanded] = useState(false);
 
@@ -21,7 +29,6 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 	};
 
 	const clickListener = (event) => {
-		console.log("clicked");
 		if(!(event.target === document.getElementById("typeMenu"))){
 			setIsMenuExpanded(false);
 		}
@@ -66,10 +73,11 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 					</button>
 				</form>
 			</header>
+
 			<aside id="typeMenu">
-				<PokemonTypes />
+				<NavBar/>
 			</aside>
-			<PokemonList/>
+			<Outlet/>
 		</div>
 	);
 };

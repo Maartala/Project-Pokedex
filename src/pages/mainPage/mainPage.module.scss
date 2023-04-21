@@ -1,6 +1,5 @@
 .mainPage {
 	position: relative;
-	background: #ccdadd;
 
 	header {
 		& > img {
@@ -47,6 +46,8 @@
 		bottom: 0;
 		transition: left 500ms;
 		z-index: 1;
+		background: white;
+		border-right: 2px solid black;
 		div {
 			height: 100%;
 		}
@@ -66,4 +67,8 @@
 			}
 		}
 	}
+}
+
+.light {
+
 }
