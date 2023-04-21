@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import styles from './PokemonTypes.module.css';
+// import logo from "../../assets/img/pokemon-title.png"
 
 
 const PokemonTypes = () => {
@@ -24,7 +25,8 @@ const PokemonTypes = () => {
 
 	return (
 		<div className={styles.pokemontypes}>
-			<h2>TYPE</h2>
+			{/* <img src={logo} alt="Logo" /> */}
+			<h2>TYPES</h2>
 			<form action="" onSubmit={(() => preventDefault())}>
 				{allTypes.map((elt) => {
 					return (

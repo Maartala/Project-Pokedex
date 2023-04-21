@@ -1,13 +1,19 @@
 .pokemontypes {
-
     background-color: #CCDADD;
 }
 
+/* .pokemontypes img {
+    padding: 1rem 0;
+    margin: 0 auto;
+    width: clamp(200px, 80vw, 300px); */
+/* } */
+
 .pokemontypes h2 {
     color: #FFCB05;
-    text-shadow: 4px 4px #2C72B8;
-    /* text-shadow: 4px 4px #2C72B8; */
-
+    font-size: 2.5rem;
+    font-weight: 900;
+    -webkit-text-stroke: 4px #2C72B8;
+    margin-bottom: 5%;
 }
 
 .pokemontypes form {
