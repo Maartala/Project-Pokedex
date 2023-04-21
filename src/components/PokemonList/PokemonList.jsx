@@ -7,7 +7,7 @@ const PokemonList = () => {
 	const [pokemon, setPokemon] = useState([])
 
 	useEffect(() => {
-		fetch(`https://pokeapi.co/api/v2/pokemon?limit=150`)
+		fetch(`https://pokeapi.co/api/v2/pokemon?limit=50`)
 			.then(response => response.json())
 			.then(json => {
 				setPokemon(json.results)
