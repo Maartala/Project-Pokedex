@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 
 import styles from "./mainPage.module.scss";
 
@@ -10,17 +10,15 @@ import {Link, Outlet, useLocation, useNavigate} from "react-router-dom";
 import NavBar from "../../components/navigation/NavBar.jsx";
 
 
-
-
 const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 	const location = useLocation();
 	const navigate = useNavigate();
 
 	useEffect(() => {
 		if(location.pathname === "/") {
-			navigate("/pokemon")
+			navigate("/pokemon");
 		}
-	}, [])
+	}, []);
 
 	const [isMenuExpanded, setIsMenuExpanded] = useState(false);
 
