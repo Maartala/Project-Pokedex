@@ -6,7 +6,7 @@ import pokemonTitle from "../../assets/img/pokemon-title.png";
 import hamburgerMenuIcon from "../../assets/img/icons/hamburger-menu-icon.svg";
 import lightThemeIcon from "../../assets/img/icons/light-theme-icon.svg";
 import darkThemeIcon from "../../assets/img/icons/dark-theme-icon.svg";
-import {Outlet, useLocation, useNavigate} from "react-router-dom";
+import {Link, Outlet, useLocation, useNavigate} from "react-router-dom";
 import NavBar from "../../components/navigation/NavBar.jsx";
 
 
@@ -62,7 +62,9 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 	return (
 		<div id="mainPage" className={styles.mainPage}>
 			<header>
-				<img src={pokemonTitle} alt="Pokemon"/>
+				<Link to="/">
+					<img src={pokemonTitle} alt="Pokemon"/>
+				</Link>
 				<form action="#" onSubmit={(event) => event.preventDefault()}>
 					<button onClick={() => setIsMenuExpanded(!isMenuExpanded)}>
 						<img src={hamburgerMenuIcon} alt="Menu"/>
