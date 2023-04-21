@@ -9,7 +9,10 @@ const PokemonListItem = (props) => {
 	const [pokemonDetails, setPokemonDetails] = useState()
 	const secondFetch = props.url
 
-	// console.log(props);
+	const pokeName = props.name[0].toUpperCase() + props.name.slice(1);
+
+	const correctId = id.toString().padStart(3, '0');
+
 
 	useEffect(() => {
 		fetch(secondFetch)
@@ -32,8 +35,8 @@ const PokemonListItem = (props) => {
 				</Link>
 			</article>
 			<div>
-				<h2>#{id}</h2>
-				<h2>{props.name}</h2>
+				<h2>#{correctId}</h2>
+				<h2>{pokeName}</h2>
 			</div>
 		</div>
 	);
