@@ -5,7 +5,6 @@ import DetailsPage from "./pages/detailsPage/DetailsPage.jsx";
 import PokemonTypes from "./components/PokemonTypes/PokemonTypes.jsx";
 import {createContext, useState} from "react";
 import PokemonList from "./components/PokemonList/PokemonList.jsx";
-import {useBoolean} from "./hooks/themeHook.js";
 import BerriesList from "./components/Berries/BerriesList.jsx";
 
 function App() {
