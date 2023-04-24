@@ -13,7 +13,7 @@ const PokemonTypes = () => {
 		fetch(`https://pokeapi.co/api/v2/type/`)
 			.then(res => res.json())
 			.then(data => setAllTypes(data.results))
-	}, [])
+	}, []);
 
 
 	// console.log(allTypes);
@@ -29,7 +29,6 @@ const PokemonTypes = () => {
 						<Link key={elt.name} to={`/types/${elt.name}`}>{elt.name}</Link>
 					)
 				})}
-
 			</form>
 
 		</div>

@@ -14,8 +14,6 @@ export const ThemeContext = createContext(false);
 function App() {
 	const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
 
-
-
 	return (
 		<div className="App" id="app">
 			<ThemeContext.Provider value={isDarkModeEnabled}>
