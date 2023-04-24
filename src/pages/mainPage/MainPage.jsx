@@ -23,13 +23,7 @@ const MainPage = ({ isDarkModeEnabled, setIsDarkModeEnabled }) => {
 
   useEffect(() => {
     const app = document.getElementById("app");
-    if (isDarkModeEnabled) {
-      app.classList.remove("light");
-      app.classList.add(styles.dark);
-    } else {
-      app.classList.remove(styles.dark);
-      app.classList.add("light");
-    }
+	isDarkModeEnabled ? app.classList.add(styles.dark) : app.classList.remove(styles.dark);
   }, [isDarkModeEnabled]);
   const toggleTheme = () => {
     setIsDarkModeEnabled(!isDarkModeEnabled);
@@ -53,7 +47,7 @@ const MainPage = ({ isDarkModeEnabled, setIsDarkModeEnabled }) => {
 
   const [filter, setFilter] = useState("");
   const handleSearch = (event) => {
-    setFilter(event.target.value);
+    setFilter(event.target.value.toLowerCase());
   };
 
   return (
