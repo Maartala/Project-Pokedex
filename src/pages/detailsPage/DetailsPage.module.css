@@ -7,26 +7,51 @@
 }
 
 .bg_card {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 30px;
 }
 
-.bg_card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.bg_card .arrow_left {
+    width: 10%;
 }
 
+.bg_card .arrow_left img {
+    width: 5rem;
+    outline: none;
+    transform: rotateY(180deg);
+    color: white;
+    margin: 0 auto;
+    filter: invert(70%);
+}
+
+.bg_card .arrow_left:hover {
+    transform: scale(1.1);
+}
+
+.bg_card .arrow_right {
+    width: 10%;
+}
+
+.bg_card .arrow_right img {
+    width: 5rem;
+    margin: 0 auto;
+    filter: invert(70%);
+}
+
+.bg_card .arrow_right:hover {
+    transform: scale(1.1)
+}
 
 /* ___________Pokemon-Card________________________________________________ */
 
 .pokemon_card img {
-    width: 70%;
+    width: 50rem;
     max-width: 500px;
     margin: 0 auto;
-    /* background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%); */
-    padding: 5vh 5vw 10vh 5vw;
+    padding: 3vh 3vw 5vh 3vw;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-top: 10px solid white;
@@ -35,23 +60,24 @@
 }
 
 .pokemon_card h2 {
-    width: 70%;
+    width: 100%;
     max-width: 500px;
-    margin: 0 auto;
+    margin: -2.5rem auto 1rem auto;
     padding: 1rem 4rem 1rem 4rem;
     border: 1px solid rgb(214, 214, 214);
     border-radius: 50px;
     background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
+    font-size: 1.8rem;
 }
 
 /* ___________Pokemon-Card_Article________________________________________ */
 
 .pokemon_card article {
-    width: 70%;
+    width: 100%;
     max-width: 500px;
     margin: 0 auto;
     background-color: white;
-    padding: 1vh 5vw 1vh 5vw;
+    padding: 1vh 3vw 1vh 3vw;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -70,6 +96,7 @@
     padding: 2% 8%;
     margin-top: 10px;
     color: white;
+    font-size: 1.2rem;
 }
 
 /* ___________ Weight&Height _____________________________________________ */
@@ -79,6 +106,13 @@
     display: flex;
     justify-content: center;
     gap: 50px;
+    font-size: 1.2rem;
+    color: rgb(145, 145, 145);
+}
+
+.weight p span {
+    font-size: 1.4rem;
+    color: rgb(82, 82, 82);
 }
 
 /* ___________ Stats _____________________________________________________ */
@@ -86,11 +120,11 @@
 .pokemon_card .stats {
     color: rgb(145, 145, 145);
     padding-top: 20px;
-    margin: 20px 0;
+    margin: 1rem 0;
     display: flex;
     flex-direction: column;
     border-top: 2px solid rgb(214, 214, 214);
-    padding: 20px 0;
+    padding: 1rem 0;
 }
 
 .pokemon_card .stats div {
@@ -102,6 +136,10 @@
     margin: 3px 0;
 }
 
+.stats .animation p {
+    font-size: 1.2em;
+}
+
 .fenster {
     width: 80%;
     background-color: #dfdfdf;
@@ -110,14 +148,14 @@
 }
 
 .fenster p {
-    height: 20px;
+    height: 25px;
     width: 10%;
     padding-top: 2px;
     color: white;
     text-align: right;
     padding-right: 5px;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 1.2rem;
     transition: width 2s ease-in-out;
 }
 
@@ -144,7 +182,7 @@
 }
 
 .animation:nth-of-type(6) .fenster p {
-    background-color: #f6d159;
+    background-color: #5e61bf;
 }
 
 /* ___________ Type_Colors _______________________________________________ */
@@ -174,7 +212,7 @@
 }
 
 .Bug {
-    background: linear-gradient(52.41deg, #8dd46c 4.87%, #5fa83d 94.37%);
+    background: linear-gradient(52.41deg, #8dd46c 4.87%, #43782a 94.37%);
 }
 
 .Ghost {
@@ -194,11 +232,11 @@
 }
 
 .Grass {
-    background: linear-gradient(52.41deg, #a2d370 4.87%, #65a425 94.37%);
+    background: linear-gradient(52.41deg, #a2d370 4.87%, #3e6418 94.37%);
 }
 
 .Electric {
-    background: linear-gradient(52.41deg, #f7e57d 4.87%, #e6bf3f 94.37%);
+    background: linear-gradient(52.41deg, #ebdd93 4.87%, #deb42b 94.37%);
 }
 
 .Psychic {
@@ -218,7 +256,7 @@
 }
 
 .Fairy {
-    background: linear-gradient(52.41deg, #f7cbf3 4.87%, #ee97e5 94.37%);
+    background: linear-gradient(52.41deg, #f7cbf3 4.87%, #db69cf 94.37%);
 }
 
 .Unknown {
@@ -230,7 +268,6 @@
 }
 
 /* ___________ Dark-Mode_Style _____________________________________ */
-
 
 .dark {
     background: rgb(20, 20, 20);
@@ -257,9 +294,24 @@
     border: 1px solid rgb(97, 97, 97);
 }
 
+.dark .bg_card .pokemon_card article .weight p {
+    color: rgb(82, 82, 82);
+}
+
+.dark .bg_card .pokemon_card article .weight p span {
+    color: rgb(145, 145, 145);
+}
+
+.dark .bg_card .arrow_left img {
+    filter: invert(50%);
+}
+
+.dark .bg_card .arrow_right img {
+    filter: invert(50%);
+}
+
 .dark .bg_card .pokemon_card article .stats .animation .fenster {
     background-color: #242a2f;
-
 }
 
 .dark .bg_card .pokemon_card article .stats .animation p {

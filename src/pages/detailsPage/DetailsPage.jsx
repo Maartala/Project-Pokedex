@@ -249,7 +249,7 @@ const DetailsPage = () => {
 	}
 
 	function prevPokemon() {
-		fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.id + 1}`)
+		fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.id - 1}`)
 			.then(res => res.json())
 			.then(data => {
 				navigate(`/pokemon/${(pokemon.id - 1)}`, { state: data })
@@ -260,9 +260,10 @@ const DetailsPage = () => {
 
 	return (
 		<section className={classArray.join(" ")}>
-
 			<section className={styles.bg_card}>
-				{/* <button onClick={prevPokemon}><img src={arrowBtn} alt="navigate button" /></button> */}
+				<div className={styles.arrow_left}>
+					<img onClick={prevPokemon} src={arrowBtn} alt="arrowbutton left" />
+				</div>
 				<div className={styles.pokemon_card}>
 					<img className={type1Class} src={pokemon.sprites.other.dream_world.front_default} alt={`comic illustration of ${fixedName}`} />
 					<article>
@@ -272,8 +273,8 @@ const DetailsPage = () => {
 							{fixedTypes2 && <p className={type2Class}>{fixedTypes2}</p>}
 						</div>
 						<div className={styles.weight}>
-							<p>{`Height: ${pokemon.height / 10} m`}</p>
-							<p>{`Weight: ${pokemon.weight / 10} kg`}</p>
+							<p>Height: <span>{`${pokemon.height / 10} m`}</span></p>
+							<p>Weight: <span>{`${pokemon.weight / 10} kg`}</span></p>
 						</div>
 						<div className={styles.stats}>
 							<div className={styles.animation}>
@@ -315,7 +316,9 @@ const DetailsPage = () => {
 						</div>
 					</article>
 				</div>
-				<button onClick={nextPokemon}>Hallo</button>
+				<div className={styles.arrow_right}>
+					<img onClick={nextPokemon} src={arrowBtn} alt="arrowbutton right" />
+				</div>
 			</section>
 		</section>
 	);
