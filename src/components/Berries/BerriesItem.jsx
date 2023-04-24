@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import style from './BerriesItem.module.scss'
 
+
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
 
@@ -40,15 +41,17 @@ const BerriesItem = (props) => {
     }, [])
 
     return (
-        <div className={classArray.join(" ")}>
-            <article>
-                <h2>{berryName}</h2>
-                <img src={pic} alt={berryName} />
-            </article>
+        <section className={classArray.join(" ")}>
             <div>
-                <Link to={`/berries/${id}`} state={berriesDetails}>More details</Link>
+                <h2>{berryName}</h2>
             </div>
-        </div>
+            <article>
+
+                <img src={pic} alt={berryName} />
+
+                <Link to={`/berries/${id}`} state={berriesDetails}>More details</Link>
+            </article>
+        </section>
     );
 }
 

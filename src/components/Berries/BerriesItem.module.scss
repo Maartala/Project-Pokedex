@@ -1,18 +1,26 @@
 .berryItem {
+    margin: 5rem auto 0 auto;
     width: 250px;
-    background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
-    border-radius: 20px;
-    padding: 1rem 1.5rem;
-    margin-top: 2rem;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    div {
+        background-color: white;
+        border-radius: 20px 20px 0 0;
+        padding: 0.5rem 0;
+    }
 
     article {
+        background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
+        border-radius: 0 0 20px 20px;
+        padding-bottom: 1.5rem;
+
         img {
             width: 30%;
-            margin: 1rem auto 1.5rem auto;
-        }
-
-        h2 {
-            font-size: 2rem;
+            margin: 0 auto;
+            padding: 1.5rem 0;
         }
     }
 

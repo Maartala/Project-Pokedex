@@ -39,14 +39,14 @@ const DetailsPage = () => {
 	if (pokemon.types.length > 1) {
 		fixedTypes2 = pokemon.types[1].type.name[0].toUpperCase() + pokemon.types[1].type.name.slice(1);
 	}
-	// console.log(fixedTypes1);
-	// console.log(fixedTypes2);
+	console.log(fixedTypes1);
+	console.log(fixedTypes2);
 
 	// Zuweisung einer spezifischen Farbe zu jedem Type
 	let type1Class = '';
 	switch (fixedTypes1) {
 		case "Normal":
-			type1Class = styles.Fire;
+			type1Class = styles.Normal;
 			break;
 		case "Fighting":
 			type1Class = styles.Fighting;
@@ -177,7 +177,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthHP(pokemon.stats[0].base_stat);
 		}, [pokemon.stats[0].base_stat])
-		return `${(widthHP * 100 / 110)}%`
+		return `${(widthHP * 100 / 155)}%`
 	}
 
 	// ATTACK
@@ -188,7 +188,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthATK(pokemon.stats[1].base_stat);
 		}, [pokemon.stats[1].base_stat])
-		return `${(widthATK * 100 / 110)}%`
+		return `${(widthATK * 100 / 155)}%`
 	}
 
 	// DEFENSE
@@ -199,7 +199,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthDEF(pokemon.stats[2].base_stat);
 		}, [pokemon.stats[2].base_stat])
-		return `${(widthDEF * 100 / 110)}%`
+		return `${(widthDEF * 100 / 155)}%`
 	}
 
 	// SPECIAL-ATTACK
@@ -210,7 +210,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthSPATK(pokemon.stats[3].base_stat);
 		}, [pokemon.stats[3].base_stat])
-		return `${(widthSPATK * 100 / 110)}%`
+		return `${(widthSPATK * 100 / 155)}%`
 	}
 
 	// SPECIAL-DEFENSE
@@ -221,7 +221,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthSPDEF(pokemon.stats[4].base_stat);
 		}, [pokemon.stats[4].base_stat])
-		return `${(widthSPDEF * 100 / 110)}%`
+		return `${(widthSPDEF * 100 / 155)}%`
 	}
 
 	// SPEED
@@ -232,7 +232,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthSPD(pokemon.stats[5].base_stat);
 		}, [pokemon.stats[5].base_stat])
-		return `${(widthSPD * 100 / 110)}%`
+		return `${(widthSPD * 100 / 155)}%`
 	}
 
 	// ====== RETURN =====================================================
@@ -241,10 +241,10 @@ const DetailsPage = () => {
 		<section className={classArray.join(" ")}>
 			<section className={styles.bg_card}>
 				<div className={styles.pokemon_card}>
-					<img src={pokemon.sprites.other.dream_world.front_default} alt={`comic illustration of ${fixedName}`} />
+					<img className={type1Class} src={pokemon.sprites.other.dream_world.front_default} alt={`comic illustration of ${fixedName}`} />
 					<article>
 						<h2>{`#${formattedId} ${fixedName}`}</h2>
-						<div className={`${styles.types_flex}`}>
+						<div className={styles.types_flex}>
 							<p className={type1Class}>{fixedTypes1}</p>
 							{fixedTypes2 && <p className={type2Class}>{fixedTypes2}</p>}
 						</div>

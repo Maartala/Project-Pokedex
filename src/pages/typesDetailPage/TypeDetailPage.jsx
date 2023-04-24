@@ -104,16 +104,15 @@ const TypeDetailPage = () => {
                                 <div className={styles.container_hl_card}>
                                     <h3 className={styles.hl_damage_to}> Gives Damage to</h3>
                                 </div>
-
                                 {/* TODO:ClassNames (flex ) für Articles  */}
                                 <article>
 
-                                    <p>Double Damage:</p>
+                                    <h5>Double Damage:</h5>
                                     {elt.damage_relations.double_damage_to.map((elt) => (
                                         <p key={elt.name}>{elt.name}</p>
                                     ))}
-
-                                    <p>Half Damage:</p>
+                                    <hr />
+                                    <h5>Half Damage:</h5>
                                     {elt.damage_relations.half_damage_to.map((elt) => (
                                         <p key={elt.name}>{elt.name}</p>
                                     ))}
@@ -126,12 +125,12 @@ const TypeDetailPage = () => {
                                 </div>
                                 <article>
 
-                                    <p>Double Damage:</p>
+                                    <h5>Double Damage:</h5>
                                     {elt.damage_relations.double_damage_from.map((elt) => (
                                         <p key={elt.name}>{elt.name}</p>
                                     ))}
-
-                                    <p>Half Damage:</p>
+                                    <hr />
+                                    <h5>Half Damage:</h5>
                                     {elt.damage_relations.half_damage_from.map((elt) => (
                                         <p key={elt.name}>{elt.name}</p>
                                     ))}

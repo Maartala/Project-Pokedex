@@ -19,7 +19,7 @@ const PokemonList = () => {
 	}, [])
 	// console.log(pokemon);
 	return (
-		<div className={style.PokemonList} >
+		<section className={style.PokemonList} >
 			{pokemon.map((element, index) => {
 				if (element.name.includes(filter))
 					return (
@@ -30,7 +30,7 @@ const PokemonList = () => {
 						/>
 					)
 			})}
-		</div>
+		</section>
 	);
 };
 

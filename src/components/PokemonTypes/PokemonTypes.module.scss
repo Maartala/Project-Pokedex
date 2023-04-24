@@ -1,10 +1,7 @@
-.pokemontypes {}
+.pokemontypes {
+    padding-bottom: 12%;
+}
 
-/* .pokemontypes img {
-    padding: 1rem 0;
-    margin: 0 auto;
-    width: clamp(200px, 80vw, 300px); */
-/* } */
 
 .pokemontypes h2 {
     width: 17rem;
@@ -130,6 +127,7 @@ DARK MODE
     h2 {
         background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
         color: #000000;
+        color: #fff;
 
     }
 }

@@ -20,12 +20,10 @@
     }
 }
 
-
-
 .typeDetail {
     .damage_flex div {
         background-color: rgb(255, 255, 255);
-        border-radius: 10px 10px;
+        border-radius: 10px 10px 4px 4px;
         display: flex;
         justify-content: center;
         padding-top: 1rem;
@@ -45,7 +43,7 @@
     border: solid 1px none;
     border-radius: 15px;
     padding: 1% 1% 1% 1%;
-    width: 300px;
+    width: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -54,13 +52,18 @@
 /* linke Karte  (gives damage to)*/
 
 .typeDetail div>section>article:nth-of-type(1) {
-    background: rgb(80, 136, 66);
-    background: linear-gradient(16deg, rgba(80, 136, 66, 1) 0%, rgba(102, 190, 50, 1) 40%, rgba(51, 196, 90, 1) 100%);
+    background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
+}
+
+.typeDetail div section article:nth-of-type(1) div {
+    // background: linear-gradient(16deg, rgba(80, 136, 66, 1) 0%, rgba(102, 190, 50, 1) 40%, rgba(51, 196, 90, 1) 100%) // color: rgb(80, 136, 66);
+    background-color: #fff;
 }
 
 .typeDetail div section article:nth-of-type(1) h3 {
     padding: 0 1rem 1rem 1rem;
-    color: rgb(80, 136, 66);
+    // color: #fff;
+    color: rgba(80, 136, 66, 1)
 }
 
 
@@ -68,13 +71,34 @@
 /* rechte Karte  (gets damage from)*/
 
 .typeDetail div>section>article:nth-of-type(2) {
-    background: rgb(136, 72, 66);
+    background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
+}
+
+.typeDetail div section article:nth-of-type(2) div {
     background: linear-gradient(332deg, rgba(136, 72, 66, 1) 0%, rgba(154, 36, 36, 1) 21%, rgba(196, 87, 51, 1) 100%);
 }
 
 .typeDetail div section article:nth-of-type(2) h3 {
     padding: 0 1rem 1rem 1rem;
-    color: rgb(136, 72, 66)
+    color: #fff
+}
+
+
+.typeDetail {
+    h5 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    hr {
+        margin-top: 3%;
+    }
 }
 
 
@@ -174,5 +198,15 @@
 DARK MODE
 ================================= */
 .dark {
-    color: black;
+    #hl_PokemonList {
+        background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
+    }
+
+    div>section>article:nth-of-type(1) {
+        background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
+    }
+
+    div>section>article:nth-of-type(2) {
+        background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
+    }
 }
