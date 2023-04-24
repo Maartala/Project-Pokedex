@@ -12,76 +12,76 @@ import darkThemeIcon from "../../assets/img/icons/dark-theme-icon.svg";
 export const FilterContext = createContext("");
 
 const MainPage = ({ isDarkModeEnabled, setIsDarkModeEnabled }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
+	const location = useLocation();
+	const navigate = useNavigate();
 
-  useEffect(() => {
-    if (location.pathname === "/") {
-      navigate("/pokemon");
-    }
-  }, []);
+	useEffect(() => {
+		if (location.pathname === "/") {
+			navigate("/pokemon");
+		}
+	}, [location, navigate]);
 
-  useEffect(() => {
-    const app = document.getElementById("app");
-	isDarkModeEnabled ? app.classList.add(styles.dark) : app.classList.remove(styles.dark);
-  }, [isDarkModeEnabled]);
-  const toggleTheme = () => {
-    setIsDarkModeEnabled(!isDarkModeEnabled);
-  };
+	useEffect(() => {
+		const app = document.getElementById("app");
+		isDarkModeEnabled
+			? app.classList.add(styles.dark)
+			: app.classList.remove(styles.dark);
+	}, [isDarkModeEnabled]);
 
-  const [isMenuExpanded, setIsMenuExpanded] = useState(false);
-  useEffect(() => {
-    document.getElementById("typeMenu").style.left = isMenuExpanded
-      ? "0"
-      : "-500px";
-  }, [isMenuExpanded]);
+	const toggleTheme = () => setIsDarkModeEnabled(!isDarkModeEnabled);
 
-  const handleMenuBack = (event) => {
-    if (
-      isMenuExpanded &&
-      !document.getElementById("typeMenu").contains(event.target)
-    ) {
-      setIsMenuExpanded(false);
-    }
-  };
+	const [isMenuExpanded, setIsMenuExpanded] = useState(false);
 
-  const [filter, setFilter] = useState("");
-  const handleSearch = (event) => {
-    setFilter(event.target.value.toLowerCase());
-  };
+	useEffect(() => {
+		const typeMenu = document.getElementById("typeMenu");
+		typeMenu.style.left = isMenuExpanded ? "0" : "-500px";
+	}, [isMenuExpanded]);
 
-  return (
-    <div
-      id="mainPage"
-      className={[styles.mainPage].join(" ")}
-      onClick={handleMenuBack}
-    >
-      <header>
-        <Link to="/pokemon">
-          <img src={pokemonTitle} alt="Pokemon" />
-        </Link>
-        <section>
-          <button onClick={() => setIsMenuExpanded(!isMenuExpanded)}>
-            <img src={hamburgerMenuIcon} alt="Menu" />
-          </button>
-          <input type="text" onChange={handleSearch} />
-          <button onClick={toggleTheme} id="toggleThemeButton">
-            <img
-              src={isDarkModeEnabled ? lightThemeIcon : darkThemeIcon}
-              alt="theme-toggle"
-            />
-          </button>
-        </section>
-      </header>
+	const handleMenuBack = (event) => {
+		if (
+			isMenuExpanded &&
+			!document.getElementById("typeMenu").contains(event.target)
+		) {
+			setIsMenuExpanded(false);
+		}
+	};
 
-      <aside id="typeMenu">
-        <NavBar setMenuState={setIsMenuExpanded} />
-      </aside>
-      <FilterContext.Provider value={filter}>
-        <Outlet />
-      </FilterContext.Provider>
-    </div>
-  );
+	const [filter, setFilter] = useState("");
+
+	const handleSearch = (event) => setFilter(event.target.value.toLowerCase());
+
+	return (
+		<div
+			id="mainPage"
+			className={styles.mainPage}
+			onClick={handleMenuBack}
+		>
+			<header>
+				<Link to="/pokemon">
+					<img src={pokemonTitle} alt="Pokemon" />
+				</Link>
+				<section>
+					<button onClick={() => setIsMenuExpanded(!isMenuExpanded)}>
+						<img src={hamburgerMenuIcon} alt="Menu" />
+					</button>
+					<input type="text" onChange={handleSearch} />
+					<button onClick={toggleTheme} id="toggleThemeButton">
+						<img
+							src={isDarkModeEnabled ? lightThemeIcon : darkThemeIcon}
+							alt="theme-toggle"
+						/>
+					</button>
+				</section>
+			</header>
+
+			<aside id="typeMenu">
+				<NavBar setMenuState={setIsMenuExpanded} />
+			</aside>
+			<FilterContext.Provider value={filter}>
+				<Outlet />
+			</FilterContext.Provider>
+		</div>
+	);
 };
 
 export default MainPage;
