@@ -1,3 +1,6 @@
+/* .Detailspage {} */
+
+
 .background {
     background: #ccdadd;
     height: 150vh;
@@ -6,6 +9,7 @@
 
 .pokemon_card img {
     width: 70%;
+    max-width: 500px;
     margin: 0 auto;
     background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
     padding: 5vh 5vw 10vh 5vw;
@@ -18,6 +22,7 @@
 
 .pokemon_card h2 {
     width: 70%;
+    max-width: 500px;
     margin: 0 auto;
     padding: 1vh 5vw 1vh 5vw;
     border: 1px solid rgb(214, 214, 214);
@@ -27,6 +32,7 @@
 
 .pokemon_card article {
     width: 70%;
+    max-width: 500px;
     margin: 0 auto;
     background-color: white;
     padding: 1vh 5vw 1vh 5vw;
@@ -84,29 +90,23 @@
     margin-left: 10px;
 }
 
-/* .fenster p {
+.fenster p {
     height: 20px;
-    width: 25px;
+    width: 10%;
     padding-top: 2px;
     color: white;
     text-align: right;
     padding-right: 5px;
     border-radius: 10px;
     font-size: 14px;
-    animation-name: growth;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-} */
-
-.fenster .balken {
-    transition: width 3s 1s ease-in;
+    transition: width 2s ease-in-out;
 }
 
-/* .animation .fenster .balken:hover {
-    width: 100%;
+/* .animation:nth-of-type(1) .fenster .hpBar {
+    width: 10%;
 } */
 
+/* _____________________________________________ */
 .animation:nth-of-type(1) .fenster p {
     background-color: #3BB900;
 }
@@ -211,4 +211,15 @@
 
 .Shadow {
     background-color: #B3B3B3;
+}
+
+/* ------------------------------ */
+
+.dark {
+    background: rgb(0, 1, 87);
+    color: white;
+}
+
+.light {
+    color: #1C1C1C;
 }

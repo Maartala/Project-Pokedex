@@ -1,27 +1,46 @@
 import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import styles from './DetailsPage.module.css'
+
+import { useContext } from "react";
+import { ThemeContext } from "../../App";
 
 const DetailsPage = () => {
 
-	const location = useLocation()
-	console.log(location)
+	// Implementieren eines Darkmodes
+	const isDarkModeEnabled = useContext(ThemeContext);
+	const classArray = [styles.Detailspage, styles.background, isDarkModeEnabled ? styles.dark : styles.light];
 
+	// =========================================================
+	// INPUT
+	const location = useLocation()
+	// console.log(location)
+
+	// Deklarierung neuer Variable aus schreibfaulen Gründen
 	const pokemon = location.state;
 
+	// =========================================================
+	// POKEMON-NAME
 	// Konvertierung des ersten Buchstabens
 	let fixedName = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
-	console.log(fixedName);
+	// console.log(fixedName);
 
+	// =========================================================
+	// POKEMON-ID
 	// Konvertierung der Ids auf dreistelligen Code
 	let formattedId = pokemon.id.toString().padStart(3, '0');
-	console.log(formattedId)
+	// console.log(formattedId)
 
+	// =========================================================
+	// TYPES
 	// Konvertierung des ersten Buchstabens der Types
 	let fixedTypes1 = pokemon.types[0].type.name[0].toUpperCase() + pokemon.types[0].type.name.slice(1);
 	let fixedTypes2 = '';
 	if (pokemon.types.length > 1) {
 		fixedTypes2 = pokemon.types[1].type.name[0].toUpperCase() + pokemon.types[1].type.name.slice(1);
 	}
+	// console.log(fixedTypes1);
+	// console.log(fixedTypes2);
 
 	// Zuweisung einer spezifischen Farbe zu jedem Type
 	let type1Class = '';
@@ -112,7 +131,7 @@ const DetailsPage = () => {
 			type2Class = styles.Bug;
 			break;
 		case "Ghost":
-			type12Class = styles.Steel;
+			type2Class = styles.Steel;
 			break;
 		case "Fire":
 			type2Class = styles.Fire;
@@ -148,13 +167,78 @@ const DetailsPage = () => {
 			type2Class = styles.Shadow;
 			break;
 	}
+	// =========================================================
+	// STATS
+	// grafische Einbindung des Health-Wertes in die Pokemon-Card
+	function changeWidthHP(pokemon) {
+		const [widthHP, setWidthHP] = useState();
 
-	console.log(fixedTypes1);
-	console.log(fixedTypes2);
+		useEffect(() => {
+			setWidthHP(pokemon.stats[0].base_stat);
+		}, [pokemon.stats[0].base_stat])
 
+		return `${(widthHP * 100 / 110)}%`
+	}
+
+	// grafische Einbindung des Attack-Wertes in die Pokemon-Card
+	function changeWidthATK(pokemon) {
+		const [widthATK, setWidthATK] = useState();
+
+		useEffect(() => {
+			setWidthATK(pokemon.stats[1].base_stat);
+		}, [pokemon.stats[1].base_stat])
+
+		return `${(widthATK * 100 / 110)}%`
+	}
+
+	// grafische Einbindung des Defense-Wertes in die Pokemon-Card
+	function changeWidthDEF(pokemon) {
+		const [widthDEF, setWidthDEF] = useState();
+
+		useEffect(() => {
+			setWidthDEF(pokemon.stats[2].base_stat);
+		}, [pokemon.stats[2].base_stat])
+
+		return `${(widthDEF * 100 / 110)}%`
+	}
+
+	// grafische Einbindung des SP-Attack-Wertes in die Pokemon-Card
+	function changeWidthSPATK(pokemon) {
+		const [widthSPATK, setWidthSPATK] = useState();
+
+		useEffect(() => {
+			setWidthSPATK(pokemon.stats[3].base_stat);
+		}, [pokemon.stats[3].base_stat])
+
+		return `${(widthSPATK * 100 / 110)}%`
+	}
+
+	// grafische Einbindung des SP-Defense-Wertes in die Pokemon-Card
+	function changeWidthSPDEF(pokemon) {
+		const [widthSPDEF, setWidthSPDEF] = useState();
+
+		useEffect(() => {
+			setWidthSPDEF(pokemon.stats[4].base_stat);
+		}, [pokemon.stats[4].base_stat])
+
+		return `${(widthSPDEF * 100 / 110)}%`
+	}
+
+	// grafische Einbindung des Speed-Wertes in die Pokemon-Card
+	function changeWidthSPD(pokemon) {
+		const [widthSPD, setWidthSPD] = useState();
+
+		useEffect(() => {
+			setWidthSPD(pokemon.stats[5].base_stat);
+		}, [pokemon.stats[5].base_stat])
+
+		return `${(widthSPD * 100 / 110)}%`
+	}
+
+	// ===========================================================
 
 	return (
-		<section className={styles.background}>
+		<section className={classArray.join(" ")}>
 			<section className={styles.bg_card}>
 				<div className={styles.pokemon_card}>
 					<img src={pokemon.sprites.other.dream_world.front_default} alt="comic illustration of the pokemon" />
@@ -172,37 +256,37 @@ const DetailsPage = () => {
 							<div className={styles.animation}>
 								<p>Health</p>
 								<div className={styles.fenster}>
-									<p className={styles.balken}>{pokemon.stats[0].base_stat}</p>
+									<p className="hpBar" style={{ width: changeWidthHP(pokemon) }}>{pokemon.stats[0].base_stat}</p>
 								</div>
 							</div>
 							<div className={styles.animation}>
 								<p>Attack</p>
 								<div className={styles.fenster}>
-									<p className={styles.balken}>{pokemon.stats[1].base_stat}</p>
+									<p className="atkBar" style={{ width: changeWidthATK(pokemon) }}>{pokemon.stats[1].base_stat}</p>
 								</div>
 							</div>
 							<div className={styles.animation}>
 								<p>Defense</p>
 								<div className={styles.fenster}>
-									<p className={styles.balken}>{pokemon.stats[2].base_stat}</p>
+									<p className="defBar" style={{ width: changeWidthDEF(pokemon) }}>{pokemon.stats[2].base_stat}</p>
 								</div>
 							</div>
 							<div className={styles.animation}>
 								<p>SP-Atk</p>
 								<div className={styles.fenster}>
-									<p className={styles.balken}>{pokemon.stats[3].base_stat}</p>
+									<p className="spATKBar" style={{ width: changeWidthSPATK(pokemon) }}>{pokemon.stats[3].base_stat}</p>
 								</div>
 							</div>
 							<div className={styles.animation}>
 								<p>SP-Def</p>
 								<div className={styles.fenster}>
-									<p className={styles.balken}>{pokemon.stats[4].base_stat}</p>
+									<p className="spDEFBar" style={{ width: changeWidthSPDEF(pokemon) }}>{pokemon.stats[4].base_stat}</p>
 								</div>
 							</div>
 							<div className={styles.animation}>
 								<p>Speed</p>
 								<div className={styles.fenster}>
-									<p className={styles.balken} value={100}>{pokemon.stats[5].base_stat}</p>
+									<p className="speedBar" style={{ width: changeWidthSPD(pokemon) }}>{pokemon.stats[5].base_stat}</p>
 								</div>
 							</div>
 						</div>
