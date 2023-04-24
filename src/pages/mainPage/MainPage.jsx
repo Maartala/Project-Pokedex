@@ -20,17 +20,6 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 		}
 	}, []);
 
-	const [isMenuExpanded, setIsMenuExpanded] = useState(false);
-
-	const toggleTheme = () => {
-		setIsDarkModeEnabled(!isDarkModeEnabled);
-	};
-
-	const clickListener = (event) => {
-		if (!(event.target === document.getElementById("typeMenu"))) {
-			setIsMenuExpanded(false);
-		}
-	};
 
 	useEffect(() => {
 		const app = document.getElementById("app");
@@ -42,18 +31,37 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 			app.classList.add("light");
 		}
 	}, [isDarkModeEnabled]);
+	const toggleTheme = () => {
+		setIsDarkModeEnabled(!isDarkModeEnabled);
+	};
 
+	const [isMenuExpanded, setIsMenuExpanded] = useState(false);
+
+	const clickListener = (event) => {
+
+		console.log(event.onMouseDown);
+		const typeMenu = document.getElementById("typeMenu");
+
+		if (!typeMenu.contains(event.target)) {
+			setIsMenuExpanded(false);
+			console.log("Schließe Menü");
+		}
+	};
 	useEffect(() => {
 		const typeMenu = document.getElementById("typeMenu");
 		if (isMenuExpanded) {
 			typeMenu.style.left = "0";
-			document.addEventListener("click", clickListener, true);
+			document.addEventListener("mousedown", clickListener, true);
 		} else {
 			typeMenu.style.left = "-500px";
-			document.removeEventListener("click", clickListener, true);
+			document.removeEventListener("mousedown", clickListener, true);
 		}
 
 	}, [isMenuExpanded]);
+
+	const handleSearch = (event) => {
+
+	}
 
 	return (
 		<div id="mainPage" className={[styles.mainPage].join(" ")}>
@@ -61,12 +69,12 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 				<Link to="/pokemon">
 					<img src={pokemonTitle} alt="Pokemon"/>
 				</Link>
-				<form action="#" onSubmit={(event) => event.preventDefault()}>
+				<form onSubmit={(event) => event.preventDefault()}>
 					<button onClick={() => setIsMenuExpanded(!isMenuExpanded)}>
 						<img src={hamburgerMenuIcon} alt="Menu"/>
 					</button>
-					<input type="text"/>
-					<button onClick={toggleTheme}>
+					<input type="text" onChange={handleSearch} onSubmit={() => {}}/>
+					<button onClick={toggleTheme} id="toggleThemeButton">
 						<img src={isDarkModeEnabled ? lightThemeIcon : darkThemeIcon} alt="theme-toggle"/>
 					</button>
 				</form>

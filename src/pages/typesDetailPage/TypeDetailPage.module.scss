@@ -1,0 +1,62 @@
+.typeDetail {}
+
+.typeDetail div section {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* beide Karten */
+.typeDetail div>section>article {
+    border: solid 1px #fff;
+    border-radius: 15px;
+    padding: 1% 1% 1% 1%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* linke Karte  (gives damage to)*/
+.typeDetail div>section>article:nth-of-type(1) {
+    background-color: rgb(162, 200, 96);
+}
+
+.typeDetail div section article:nth-of-type(1) h3 {
+    padding: 0 1rem 1rem 1rem;
+}
+
+
+
+/* _______________________________________________ */
+/* rechte Karte  (gets damage from)*/
+.typeDetail div>section>article:nth-of-type(2) {
+    background-color: rgb(255, 77, 0);
+}
+
+.typeDetail div section article:nth-of-type(2) h3 {
+    padding: 0 1rem 1rem 1rem;
+}
+
+
+/* ===================================== */
+/* Liste mit Pokemons (TypesList) */
+.typeDetail div>article {
+    text-transform: capitalize
+}
+
+/* .typeDetail>.damage_flex {
+    background-color: red;
+} */
+
+
+/* =================================
+DARK MODE
+================================= */
+.dark {
+    color: red;
+}
+
+.typeDetail {
+    .damage_flex {
+        background-color: black;
+    }
+}
