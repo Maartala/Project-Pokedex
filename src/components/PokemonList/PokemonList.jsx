@@ -1,6 +1,7 @@
 import PokemonListItem from "./PokemonListItem.jsx";
 import { useState, useEffect } from "react";
-import style from './PokemonList.module.css'
+import style from './PokemonList.module.scss'
+
 
 const PokemonList = () => {
 
@@ -17,7 +18,7 @@ const PokemonList = () => {
 	}, [])
 	// console.log(pokemon);
 	return (
-		<div className={style.PokemonList}>
+		<div className={style.PokemonList} >
 			{pokemon.map((element, index) => {
 				return (
 					<PokemonListItem
