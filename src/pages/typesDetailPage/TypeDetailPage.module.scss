@@ -20,6 +20,8 @@
     }
 }
 
+
+
 .typeDetail {
     .damage_flex div {
         background-color: rgb(255, 255, 255);
@@ -31,7 +33,7 @@
 
     .damage_flex div h3 {
         font-size: 1.5rem;
-        font-weight: 400;
+        font-weight: 600;
     }
 }
 
@@ -80,8 +82,13 @@
 /* Headline Pokemon-List */
 .typeDetail {
     #hl_PokemonList {
+        width: 17rem;
         font-size: 2rem;
-        margin-top: 5rem;
+        margin: 7rem auto 2rem auto;
+        padding: 1.5rem 3rem;
+        border: solid 1px none;
+        border-radius: 15px;
+        background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
     }
 }
 

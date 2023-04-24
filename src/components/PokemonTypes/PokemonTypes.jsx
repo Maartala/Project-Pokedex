@@ -31,7 +31,7 @@ const PokemonTypes = () => {
 				{allTypes.slice(0, 18).map((elt) => {
 					// console.log(elt.name);
 					return (
-						<Link key={elt.name} to={`/types/${elt.name}`} id="link">{elt.name}</Link>
+						<Link id="link" key={elt.name} to={`/types/${elt.name}`}>{elt.name}</Link>
 					)
 				})}
 			</form>
