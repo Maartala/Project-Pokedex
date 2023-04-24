@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import BerriesItem from "./BerriesItem";
 import style from './BerriesList.module.scss'
+import { FilterContext } from "../../pages/mainPage/MainPage.jsx";
 
 const BerriesList = () => {
 
     const [berries, setBerries] = useState([])
+    const filter = useContext(FilterContext)
 
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/berry`)
@@ -17,13 +19,14 @@ const BerriesList = () => {
     return (
         <div className={style.berriesList}>
             {berries.map((element, index) => {
-                return (
-                    <BerriesItem
-                        key={index}
-                        name={element.name}
-                        url={element.url}
-                    />
-                )
+                if (element.name.includes(filter))
+                    return (
+                        <BerriesItem
+                            key={index}
+                            name={element.name}
+                            url={element.url}
+                        />
+                    )
             })}
 
         </div>

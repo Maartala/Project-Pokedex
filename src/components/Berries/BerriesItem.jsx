@@ -24,13 +24,17 @@ const BerriesItem = (props) => {
             .then(json => {
                 // console.log(json);
                 setId(json.id)
-                setBerriesDetails(json)
+
 
                 fetch(json.item.url)
                     .then(response => response.json())
-                    .then(json => {
-                        // console.log(json.sprites.default);
-                        setPic(json.sprites.default)
+                    .then(json2 => {
+                        // console.log(json);
+                        setPic(json2.sprites.default)
+
+                        // Übergeben von beide json der fetches
+                        setBerriesDetails({ json, json2 })
+                        // console.log({ json, json2 });
                     })
             })
     }, [])
