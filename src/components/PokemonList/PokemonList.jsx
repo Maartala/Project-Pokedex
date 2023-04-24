@@ -1,11 +1,12 @@
 import PokemonListItem from "./PokemonListItem.jsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import style from './PokemonList.module.scss'
-
+import { FilterContext } from "../../pages/mainPage/MainPage.jsx";
 
 const PokemonList = () => {
 
 	const [pokemon, setPokemon] = useState([])
+	const filter = useContext(FilterContext)
 
 	useEffect(() => {
 		fetch(`https://pokeapi.co/api/v2/pokemon?limit=50`)
@@ -20,13 +21,14 @@ const PokemonList = () => {
 	return (
 		<div className={style.PokemonList} >
 			{pokemon.map((element, index) => {
-				return (
-					<PokemonListItem
-						key={index}
-						name={element.name}
-						url={element.url}
-					/>
-				)
+				if (element.name.includes(filter))
+					return (
+						<PokemonListItem
+							key={index}
+							name={element.name}
+							url={element.url}
+						/>
+					)
 			})}
 		</div>
 	);
