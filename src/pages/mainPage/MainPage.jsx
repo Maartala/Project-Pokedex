@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import {Link, Outlet, useLocation, useNavigate} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import NavBar from "../../components/navigation/NavBar.jsx";
 import styles from "./mainPage.module.scss";
@@ -9,7 +9,7 @@ import hamburgerMenuIcon from "../../assets/img/icons/hamburger-menu-icon.svg";
 import lightThemeIcon from "../../assets/img/icons/light-theme-icon.svg";
 import darkThemeIcon from "../../assets/img/icons/dark-theme-icon.svg";
 
-const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
+const MainPage = ({ isDarkModeEnabled, setIsDarkModeEnabled }) => {
 
 	const location = useLocation();
 	const navigate = useNavigate();
@@ -36,54 +36,41 @@ const MainPage = ({isDarkModeEnabled, setIsDarkModeEnabled}) => {
 	};
 
 	const [isMenuExpanded, setIsMenuExpanded] = useState(false);
-
-	const clickListener = (event) => {
-
-		console.log(event.onMouseDown);
-		const typeMenu = document.getElementById("typeMenu");
-
-		if (!typeMenu.contains(event.target)) {
-			setIsMenuExpanded(false);
-			console.log("Schließe Menü");
-		}
-	};
 	useEffect(() => {
-		const typeMenu = document.getElementById("typeMenu");
-		if (isMenuExpanded) {
-			typeMenu.style.left = "0";
-			document.addEventListener("mousedown", clickListener, true);
-		} else {
-			typeMenu.style.left = "-500px";
-			document.removeEventListener("mousedown", clickListener, true);
-		}
-
+		document.getElementById("typeMenu").style.left = isMenuExpanded ? "0" : "-500px";
 	}, [isMenuExpanded]);
 
-	const handleSearch = (event) => {
+	const handleMenuBack = (event) => {
+		if (isMenuExpanded && !document.getElementById("typeMenu").contains(event.target)){
+			setIsMenuExpanded(false);
+		}
+	}
 
+	const handleSearch = (event) => {
+		console.log(event.target.value)
 	}
 
 	return (
-		<div id="mainPage" className={[styles.mainPage].join(" ")}>
+		<div id="mainPage" className={[styles.mainPage].join(" ")} onClick={handleMenuBack}>
 			<header>
 				<Link to="/pokemon">
-					<img src={pokemonTitle} alt="Pokemon"/>
+					<img src={pokemonTitle} alt="Pokemon" />
 				</Link>
-				<form onSubmit={(event) => event.preventDefault()}>
+				<section>
 					<button onClick={() => setIsMenuExpanded(!isMenuExpanded)}>
-						<img src={hamburgerMenuIcon} alt="Menu"/>
+						<img src={hamburgerMenuIcon} alt="Menu" />
 					</button>
-					<input type="text" onChange={handleSearch} onSubmit={() => {}}/>
+					<input type="text" onChange={handleSearch} />
 					<button onClick={toggleTheme} id="toggleThemeButton">
-						<img src={isDarkModeEnabled ? lightThemeIcon : darkThemeIcon} alt="theme-toggle"/>
+						<img src={isDarkModeEnabled ? lightThemeIcon : darkThemeIcon} alt="theme-toggle" />
 					</button>
-				</form>
+				</section>
 			</header>
 
 			<aside id="typeMenu">
-				<NavBar/>
+				<NavBar setMenuState={setIsMenuExpanded}/>
 			</aside>
-			<Outlet/>
+			<Outlet />
 		</div>
 	);
 };
