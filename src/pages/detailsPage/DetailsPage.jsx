@@ -1,7 +1,8 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+
 import styles from './DetailsPage.module.css';
-import { Link } from 'react-router-dom';
+import arrowBtn from '../../assets/img/icons/next.png'
 
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
@@ -236,15 +237,32 @@ const DetailsPage = () => {
 		return `${(widthSPD * 100 / 155)}%`
 	}
 
+	// Einfügen einer seitlichen Pfeilnavigation auf der Detailspage
+	const navigate = useNavigate()
+
+	function nextPokemon() {
+		fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.id + 1}`)
+			.then(res => res.json())
+			.then(data => {
+				navigate(`/pokemon/${(pokemon.id + 1)}`, { state: data })
+			})
+	}
+
+	function prevPokemon() {
+		fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.id + 1}`)
+			.then(res => res.json())
+			.then(data => {
+				navigate(`/pokemon/${(pokemon.id - 1)}`, { state: data })
+			})
+	}
+
 	// ====== RETURN =====================================================
 
 	return (
 		<section className={classArray.join(" ")}>
-			<section className={styles.bg_card}>
-				<aside>
-					<Link to={`{'/pokemon/${(pokemon.id + 1)}`}>Hallo</Link>
-				</aside>
 
+			<section className={styles.bg_card}>
+				{/* <button onClick={prevPokemon}><img src={arrowBtn} alt="navigate button" /></button> */}
 				<div className={styles.pokemon_card}>
 					<img className={type1Class} src={pokemon.sprites.other.dream_world.front_default} alt={`comic illustration of ${fixedName}`} />
 					<article>
@@ -297,6 +315,7 @@ const DetailsPage = () => {
 						</div>
 					</article>
 				</div>
+				<button onClick={nextPokemon}>Hallo</button>
 			</section>
 		</section>
 	);

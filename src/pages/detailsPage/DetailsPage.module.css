@@ -6,6 +6,19 @@
     padding-top: 50px;
 }
 
+.bg_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* ___________Pokemon-Card________________________________________________ */
 
 .pokemon_card img {
