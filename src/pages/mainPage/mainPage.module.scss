@@ -2,6 +2,10 @@
 	position: relative;
 	background: #ccdadd;
 
+	min-height: 100vh;
+
+	transition: color 500ms, background 500ms;
+
 	header {
 		& > a {
 			display: block;

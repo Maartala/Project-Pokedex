@@ -5,10 +5,11 @@ import './index.scss'
 import {BrowserRouter} from "react-router-dom";
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <BrowserRouter>
-          <App />
+          <App/>
       </BrowserRouter>
   </React.StrictMode>,
 )

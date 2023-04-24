@@ -50,10 +50,12 @@ const MainPage = ({ isDarkModeEnabled, setIsDarkModeEnabled }) => {
 
 	const handleSearch = (event) => setFilter(event.target.value.toLowerCase());
 
+
+	const classArray = [styles.mainPage, isDarkModeEnabled ? styles.dark : null]
 	return (
 		<div
 			id="mainPage"
-			className={styles.mainPage}
+			className={classArray.join(" ")}
 			onClick={handleMenuBack}
 		>
 			<header>

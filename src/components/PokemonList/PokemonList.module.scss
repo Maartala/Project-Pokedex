@@ -1,6 +1,6 @@
 .PokemonList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
     justify-content: center;
     gap: 1.5rem;
 }

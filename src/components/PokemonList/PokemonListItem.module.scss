@@ -1,6 +1,10 @@
 .pokemonListItem {
     margin: 5rem auto;
 
+    &:hover {
+        transform: scale(1.1);
+    }
+
     article {
         background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
         width: 250px;
