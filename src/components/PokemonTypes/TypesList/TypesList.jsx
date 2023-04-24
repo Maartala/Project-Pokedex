@@ -3,9 +3,12 @@ import { ThemeContext } from '../../../App';
 import styles from '../TypesList/TypesList.module.scss';
 // import TypeListItem from "./TypeListItem";
 import PokemonListItem from "../../PokemonList/PokemonListItem";
+import { FilterContext } from "../../../pages/mainPage/MainPage";
 
 
 const TypesList = ({ pokemon }) => {
+
+    const filter = useContext(FilterContext)
 
     // DarkMode 
     const isDarkModeEnabled = useContext(ThemeContext)
@@ -17,21 +20,32 @@ const TypesList = ({ pokemon }) => {
 
     useEffect(() => {
         Promise.all(
-            pokemon.slice(0, 40).map(props =>
-                fetch(`https://pokeapi.co/api/v2/pokemon/${props.pokemon.name}`)
-                    .then(res => res.json())
+            pokemon.map(props => {
+                return (
+                    fetch(`https://pokeapi.co/api/v2/pokemon/${props.pokemon.name}`)
+                        .then(res => res.json())
+                )
+            }
             )
         ).then(data => {
+            console.log(data);
+
             setPokemonDetails(data);
         });
     }, [pokemon]);
 
     return (
         <div className={classArray.join(" ")} >
-            {pokemonDetails.map((elt, index) => (
-                // <TypeListItem key={props.id} props={props} formatId={formatId} />
-                <PokemonListItem key={elt.id} name={pokemon[index].pokemon.name} url={pokemon[index].pokemon.url} />
-            ))}
+            {pokemonDetails.map((elt, index) => {
+                if (elt.sprites.other.dream_world.front_default === null || elt.id > 1000) {
+                    return
+                }
+                if (elt.name.includes(filter)) {
+                    return (<PokemonListItem key={elt.id} name={pokemon[index].pokemon.name} url={pokemon[index].pokemon.url} />)
+                }
+
+
+            })}
         </div>
     );
 };

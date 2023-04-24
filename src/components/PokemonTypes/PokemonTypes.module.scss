@@ -7,17 +7,25 @@
 /* } */
 
 .pokemontypes h2 {
-    color: #FFCB05;
-    font-size: 2.5rem;
-    font-weight: 900;
-    -webkit-text-stroke: 4px #2C72B8;
-    margin-bottom: 5%;
+    width: 17rem;
+    color: #2C72B8;
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 7rem auto 2rem auto;
+    padding: 1.5rem 3rem;
+    border: solid 1px none;
+    border-radius: 15px;
+    background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
 }
 
 .pokemontypes form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 3% 5%; //display: grid;
+    // grid-template-columns: repeat(2, 1fr);
     justify-items: center;
+    gap: 2rem
 }
 
 
@@ -27,7 +35,7 @@
     color: #fff;
     font-weight: 700;
     padding: 1rem 3rem;
-    margin: 2%;
+    // margin: 2%;
     border-radius: 5px;
     -webkit-box-shadow: inset 0px 0px 17px 13px rgba(0, 0, 0, 0.27);
     box-shadow: inset 0px 0px 17px 13px rgba(0, 0, 0, 0.27);
@@ -113,8 +121,15 @@
 DARK MODE
 ================================= */
 
-.dark #link {
+.dark {
+    #link {
+        -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 0px 0px 24px 6px rgba(190, 190, 190, 0.5);
+        box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 0px 0px 24px 6px rgba(190, 190, 190, 0.5);
+    }
 
-    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 0px 0px 24px 6px rgba(190, 190, 190, 0.5);
-    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 0px 0px 24px 6px rgba(190, 190, 190, 0.5);
+    h2 {
+        background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
+        color: #000000;
+
+    }
 }
