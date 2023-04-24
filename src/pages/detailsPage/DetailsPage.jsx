@@ -169,6 +169,7 @@ const DetailsPage = () => {
 	}
 	// =========================================================
 	// STATS
+	// HEALTH
 	// grafische Einbindung des Health-Wertes in die Pokemon-Card
 	function changeWidthHP(pokemon) {
 		const [widthHP, setWidthHP] = useState();
@@ -176,10 +177,10 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthHP(pokemon.stats[0].base_stat);
 		}, [pokemon.stats[0].base_stat])
-
 		return `${(widthHP * 100 / 110)}%`
 	}
 
+	// ATTACK
 	// grafische Einbindung des Attack-Wertes in die Pokemon-Card
 	function changeWidthATK(pokemon) {
 		const [widthATK, setWidthATK] = useState();
@@ -187,10 +188,10 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthATK(pokemon.stats[1].base_stat);
 		}, [pokemon.stats[1].base_stat])
-
 		return `${(widthATK * 100 / 110)}%`
 	}
 
+	// DEFENSE
 	// grafische Einbindung des Defense-Wertes in die Pokemon-Card
 	function changeWidthDEF(pokemon) {
 		const [widthDEF, setWidthDEF] = useState();
@@ -198,10 +199,10 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthDEF(pokemon.stats[2].base_stat);
 		}, [pokemon.stats[2].base_stat])
-
 		return `${(widthDEF * 100 / 110)}%`
 	}
 
+	// SPECIAL-ATTACK
 	// grafische Einbindung des SP-Attack-Wertes in die Pokemon-Card
 	function changeWidthSPATK(pokemon) {
 		const [widthSPATK, setWidthSPATK] = useState();
@@ -209,10 +210,10 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthSPATK(pokemon.stats[3].base_stat);
 		}, [pokemon.stats[3].base_stat])
-
 		return `${(widthSPATK * 100 / 110)}%`
 	}
 
+	// SPECIAL-DEFENSE
 	// grafische Einbindung des SP-Defense-Wertes in die Pokemon-Card
 	function changeWidthSPDEF(pokemon) {
 		const [widthSPDEF, setWidthSPDEF] = useState();
@@ -220,10 +221,10 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthSPDEF(pokemon.stats[4].base_stat);
 		}, [pokemon.stats[4].base_stat])
-
 		return `${(widthSPDEF * 100 / 110)}%`
 	}
 
+	// SPEED
 	// grafische Einbindung des Speed-Wertes in die Pokemon-Card
 	function changeWidthSPD(pokemon) {
 		const [widthSPD, setWidthSPD] = useState();
@@ -231,17 +232,16 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthSPD(pokemon.stats[5].base_stat);
 		}, [pokemon.stats[5].base_stat])
-
 		return `${(widthSPD * 100 / 110)}%`
 	}
 
-	// ===========================================================
+	// ====== RETURN =====================================================
 
 	return (
 		<section className={classArray.join(" ")}>
 			<section className={styles.bg_card}>
 				<div className={styles.pokemon_card}>
-					<img src={pokemon.sprites.other.dream_world.front_default} alt="comic illustration of the pokemon" />
+					<img src={pokemon.sprites.other.dream_world.front_default} alt={`comic illustration of ${fixedName}`} />
 					<article>
 						<h2>{`#${formattedId} ${fixedName}`}</h2>
 						<div className={`${styles.types_flex}`}>
