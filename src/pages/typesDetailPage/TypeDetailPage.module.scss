@@ -1,13 +1,46 @@
-.typeDetail {}
-
-.typeDetail div section {
-    display: flex;
-    justify-content: space-evenly;
+.typeDetail>h2 {
+    color: #fff;
+    font-weight: 700;
+    padding: 1.5rem 3rem;
+    margin: 5% auto;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 17px 13px rgba(0, 0, 0, 0.27);
+    box-shadow: inset 0px 0px 17px 13px rgba(0, 0, 0, 0.27);
+    ;
+    border: solid none 1px;
+    width: 12rem;
 }
 
+
+.typeDetail {
+    .damage_flex {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+}
+
+.typeDetail {
+    .damage_flex div {
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px 10px;
+        display: flex;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+
+    .damage_flex div h3 {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+}
+
+
+/* _______________________________________________ */
 /* beide Karten */
+
 .typeDetail div>section>article {
-    border: solid 1px #fff;
+    border: solid 1px none;
     border-radius: 15px;
     padding: 1% 1% 1% 1%;
     width: 300px;
@@ -15,48 +48,124 @@
     flex-direction: column;
 }
 
+/* _______________________________________________ */
 /* linke Karte  (gives damage to)*/
+
 .typeDetail div>section>article:nth-of-type(1) {
-    background-color: rgb(162, 200, 96);
+    background: rgb(80, 136, 66);
+    background: linear-gradient(16deg, rgba(80, 136, 66, 1) 0%, rgba(102, 190, 50, 1) 40%, rgba(51, 196, 90, 1) 100%);
 }
 
 .typeDetail div section article:nth-of-type(1) h3 {
     padding: 0 1rem 1rem 1rem;
+    color: rgb(80, 136, 66);
 }
-
 
 
 /* _______________________________________________ */
 /* rechte Karte  (gets damage from)*/
+
 .typeDetail div>section>article:nth-of-type(2) {
-    background-color: rgb(255, 77, 0);
+    background: rgb(136, 72, 66);
+    background: linear-gradient(332deg, rgba(136, 72, 66, 1) 0%, rgba(154, 36, 36, 1) 21%, rgba(196, 87, 51, 1) 100%);
 }
 
 .typeDetail div section article:nth-of-type(2) h3 {
     padding: 0 1rem 1rem 1rem;
+    color: rgb(136, 72, 66)
 }
 
 
-/* ===================================== */
-/* Liste mit Pokemons (TypesList) */
-.typeDetail div>article {
-    text-transform: capitalize
+/* _______________________________________________ */
+/* Headline Pokemon-List */
+.typeDetail {
+    #hl_PokemonList {
+        font-size: 2rem;
+        margin-top: 5rem;
+    }
 }
 
-/* .typeDetail>.damage_flex {
-    background-color: red;
-} */
 
+
+// ======================================
+// Farbzuweisungen 
+.typeDetail {
+    .normal {
+        background-color: #B3B3B3;
+    }
+
+    .fighting {
+        background-color: #E40000;
+    }
+
+    .flying {
+        background-color: #CCDADD;
+    }
+
+    .poison {
+        background-color: #AB00AE;
+    }
+
+    .ground {
+        background-color: #965A00;
+    }
+
+    .rock {
+        background-color: #E1B237;
+    }
+
+    .bug {
+        background-color: #3BB900;
+    }
+
+    .ghost {
+        background-color: #5A1E64;
+    }
+
+    .steel {
+        background-color: #2A4950;
+    }
+
+    .fire {
+        background-color: #FF9900;
+    }
+
+    .water {
+        background-color: #00A0E4;
+    }
+
+    .grass {
+        background-color: #57921C;
+    }
+
+    .electric {
+        background-color: #FFE600;
+    }
+
+    .psychic {
+        background-color: #FF81F2;
+    }
+
+    .ice {
+        background-color: #6AD2FF;
+    }
+
+    .dragon {
+        background-color: #00458A;
+    }
+
+    .dark {
+        background-color: #1C1C1C
+    }
+
+    .fairy {
+        background-color: #FFC2F9;
+    }
+}
 
 /* =================================
 DARK MODE
 ================================= */
 .dark {
-    color: red;
-}
-
-.typeDetail {
-    .damage_flex {
-        background-color: black;
-    }
+    color: black;
 }

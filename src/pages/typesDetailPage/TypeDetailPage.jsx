@@ -1,15 +1,14 @@
-import style from './TypeDetailPage.module.scss';
+import styles from './TypeDetailPage.module.scss';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect, useContext } from "react";
 import { ThemeContext } from '../../App';
 import TypesList from '../../components/PokemonTypes/TypesList/TypesList';
-// //import classNames from 'classnames';  -> npm install classnames
+
 
 const TypeDetailPage = () => {
 
     const typeName = useParams();
-    console.log(typeName);
-
+    // console.log(typeName);
     const [typeDetails, setTypeDetails] = useState([])
 
     useEffect(() => {
@@ -21,64 +20,127 @@ const TypeDetailPage = () => {
                 setTypeDetails([data])
             })
     }, [])
+    // console.log(typeDetails);
 
-    console.log(typeDetails);
 
     //DarkMode:
     const isDarkModeEnabled = useContext(ThemeContext)
-    console.log(isDarkModeEnabled);
+    // console.log(isDarkModeEnabled);
+    const classArray = [styles.typeDetail, isDarkModeEnabled ? styles.dark : styles.light];
 
 
-    const classArray = [style.typeDetail, isDarkModeEnabled ? style.dark : style.light];
 
-
-    // //const isDarkModeEnabled = useContext(ThemeContext);
-    // //console.log(isDarkModeEnabled);
-    // //const classArray = classNames(
-    // //    style.typeDetail,
-    // //     {
-    // //         [style.dark]: isDarkModeEnabled,
-    // //         [style.light]: !isDarkModeEnabled
-    // //     }
-    // // );
+    // Zuweisung der Farbe zu jedem Type in der Überschrift
+    let typeClass = '';
+    switch (typeName.id) {
+        case "normal":
+            typeClass = styles.normal;
+            break;
+        case "fighting":
+            typeClass = styles.fighting;
+            break;
+        case "flying":
+            typeClass = styles.flying;
+            break;
+        case "poison":
+            typeClass = styles.poison;
+            break;
+        case "ground":
+            typeClass = styles.ground;
+            break;
+        case "rock":
+            typeClass = styles.rock;
+            break;
+        case "bug":
+            typeClass = styles.bug;
+            break;
+        case "ghost":
+            typeClass = styles.ghost;
+            break;
+        case "steel":
+            typeClass = styles.steel;
+            break;
+        case "fire":
+            typeClass = styles.fire;
+            break;
+        case "water":
+            typeClass = styles.water;
+            break;
+        case "grass":
+            typeClass = styles.grass;
+            break;
+        case "electric":
+            typeClass = styles.electric;
+            break;
+        case "psychic":
+            typeClass = styles.psychic;
+            break;
+        case "ice":
+            typeClass = styles.ice;
+            break;
+        case "dragon":
+            typeClass = styles.dragon;
+            break;
+        case "dark":
+            typeClass = styles.dark;
+            break;
+        case "fairy":
+            typeClass = styles.fairy;
+            break;
+    }
 
 
     return (
-        <div className={classArray.join(" ")} /*className={classArray}*/ >
-            <h2>{`${typeName.id.toUpperCase()}`}</h2>
+        <div className={classArray.join(" ")} >
+
+            <h2 className={typeClass}>{`${typeName.id.toUpperCase()}`}</h2>
             {typeDetails.map((elt) => {
+
                 return (
                     <div key={elt.name}>
-                        <section className={style.damage_flex} >
+
+                        <section className={styles.damage_flex} >
                             <article>
-                                <h3> gives damage to</h3>
+                                <div className={styles.container_hl_card}>
+                                    <h3 className={styles.hl_damage_to}> Gives Damage to</h3>
+                                </div>
+
+                                {/* TODO:ClassNames (flex ) für Articles  */}
                                 <article>
-                                    <p>double damage:</p>
+
+                                    <p>Double Damage:</p>
                                     {elt.damage_relations.double_damage_to.map((elt) => (
                                         <p key={elt.name}>{elt.name}</p>
                                     ))}
-                                    <p>half damage:</p>
+
+                                    <p>Half Damage:</p>
                                     {elt.damage_relations.half_damage_to.map((elt) => (
                                         <p key={elt.name}>{elt.name}</p>
                                     ))}
                                 </article>
                             </article>
+
                             <article>
-                                <h3>gets damage from</h3>
+                                <div>
+                                    <h3>Gets Damage from</h3>
+                                </div>
                                 <article>
-                                    <p>double damage:</p>
+
+                                    <p>Double Damage:</p>
                                     {elt.damage_relations.double_damage_from.map((elt) => (
                                         <p key={elt.name}>{elt.name}</p>
                                     ))}
-                                    <p>half damage</p>
+
+                                    <p>Half Damage:</p>
                                     {elt.damage_relations.half_damage_from.map((elt) => (
                                         <p key={elt.name}>{elt.name}</p>
                                     ))}
+
                                 </article>
                             </article>
                         </section>
                         <article>
-                            <h4>Pokemons</h4>
+                            <h4 id={styles.hl_PokemonList}>Pokemons</h4>
                             <TypesList pokemon={elt.pokemon} />
                         </article>
 
@@ -90,3 +152,66 @@ const TypeDetailPage = () => {
 }
 
 export default TypeDetailPage;
+
+
+// let eltTypeClass = "";
+// switch (elt.name) {
+//     case "normal":
+//         eltTypeClass = styles.normal;
+//         break;
+//     case "fighting":
+//         eltTypeClass = styles.fighting;
+//         break;
+
+//     case "flying":
+//         eltTypeClass = styles.flying;
+//         break;
+//     case "poison":
+//         eltTypeClass = styles.poison;
+//         break;
+//     case "ground":
+//         eltTypeClass = styles.ground;
+//         break;
+//     case "rock":
+//         eltTypeClass = styles.rock;
+//         break;
+//     case "bug":
+//         eltTypeClass = styles.bug;
+//         break;
+//     case "ghost":
+//         eltTypeClass = stylesghost;
+//         break;
+//     case "steel":
+//         eltTypeClass = styles.steel;
+//         break;
+//     case "fire":
+//         eltTypeClass = styles.fire;
+//         break;
+//     case "water":
+//         eltTypeClass = styles.water;
+//         break;
+//     case "grass":
+//         eltTypeClass = styles.grass;
+//         break;
+//     case "electric":
+//         eltTypeClass = styles.electric;
+//         break;
+//     case "psychic":
+//         eltTypeClass = styles.psychic;
+//         break;
+//     case "ice":
+//         eltTypeClass = styles.ice;
+//         break;
+//     case "dragon":
+//         eltTypeClass = styles.dragon;
+//         break;
+//     case "dark":
+//         eltTypeClass = styles.dark;
+//         break;
+//     case "fairy":
+//         eltTypeClass = styles.fairy;
+//         break;
+//     default:
+//         eltTypeClass = styles.normal;
+//         break;
+//}
