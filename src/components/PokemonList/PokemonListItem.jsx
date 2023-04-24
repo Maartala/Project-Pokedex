@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import style from './PokemonListItem.module.css'
+import style from './PokemonListItem.module.scss'
+
+import { useContext } from "react";
+import { ThemeContext } from "../../App";
 
 const PokemonListItem = (props) => {
+
+	const isDarkModeEnabled = useContext(ThemeContext);
+	const classArray = [style.pokemonListItem, isDarkModeEnabled ? style.dark : style.light];
 
 	const [pic, setPic] = useState([])
 	const [id, setId] = useState([])
@@ -28,7 +34,7 @@ const PokemonListItem = (props) => {
 	// console.log(pic);
 	// console.log(id);
 	return (
-		<div className={style.pokemonListItem}>
+		<div className={classArray.join(" ")} >
 			<article>
 				<Link to={`/pokemon/${id}`} state={pokemonDetails}>
 					<img src={pic} alt={props.name} />

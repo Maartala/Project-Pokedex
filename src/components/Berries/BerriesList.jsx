@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import BerriesItem from "./BerriesItem";
-import style from './BerriesList.module.css'
+import style from './BerriesList.module.scss'
 
 const BerriesList = () => {
 
@@ -13,7 +13,7 @@ const BerriesList = () => {
                 setBerries(json.results)
             });
     }, [])
-    console.log(berries);
+    // console.log(berries);
     return (
         <div className={style.berriesList}>
             {berries.map((element, index) => {
