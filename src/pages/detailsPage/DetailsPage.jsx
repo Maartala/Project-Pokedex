@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import styles from './DetailsPage.module.css'
+import styles from './DetailsPage.module.css';
+import { Link } from 'react-router-dom';
 
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
@@ -240,6 +241,10 @@ const DetailsPage = () => {
 	return (
 		<section className={classArray.join(" ")}>
 			<section className={styles.bg_card}>
+				<aside>
+					<Link to={`{'/pokemon/${(pokemon.id + 1)}`}>Hallo</Link>
+				</aside>
+
 				<div className={styles.pokemon_card}>
 					<img className={type1Class} src={pokemon.sprites.other.dream_world.front_default} alt={`comic illustration of ${fixedName}`} />
 					<article>
@@ -272,13 +277,13 @@ const DetailsPage = () => {
 								</div>
 							</div>
 							<div className={styles.animation}>
-								<p>SP-Atk</p>
+								<p>Sp.Atk</p>
 								<div className={styles.fenster}>
 									<p className="spATKBar" style={{ width: changeWidthSPATK(pokemon) }}>{pokemon.stats[3].base_stat}</p>
 								</div>
 							</div>
 							<div className={styles.animation}>
-								<p>SP-Def</p>
+								<p>Sp.Def</p>
 								<div className={styles.fenster}>
 									<p className="spDEFBar" style={{ width: changeWidthSPDEF(pokemon) }}>{pokemon.stats[4].base_stat}</p>
 								</div>

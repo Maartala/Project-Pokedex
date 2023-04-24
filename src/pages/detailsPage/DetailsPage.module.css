@@ -111,119 +111,109 @@
 /* ___________ Stat_Colours ______________________________________________ */
 
 .animation:nth-of-type(1) .fenster p {
-    background-color: #3BB900;
+    background-color: #6bae4c;
 }
 
 .animation:nth-of-type(2) .fenster p {
-    background-color: #E40000;
+    background-color: #da3f3f;
 }
 
 .animation:nth-of-type(3) .fenster p {
-    background-color: #00A0E4;
+    background-color: #54b1d9;
 }
 
 .animation:nth-of-type(4) .fenster p {
-    background-color: #AB00AE;
+    background-color: #a24aa4;
 }
 
 .animation:nth-of-type(5) .fenster p {
-    background-color: #965A00;
+    background-color: #896c3f;
 }
 
 .animation:nth-of-type(6) .fenster p {
-    background-color: #FF81F2;
+    background-color: #f6d159;
 }
 
 /* ___________ Type_Colors _______________________________________________ */
 
 .Normal {
-    background-color: #B3B3B3;
+    background: linear-gradient(52.41deg, #e3e3e3 4.87%, #848484 94.37%);
 }
 
 .Fighting {
-    background-color: #E40000;
+    background: linear-gradient(52.41deg, #e34e4e 4.87%, #9f2b2b 94.37%);
 }
 
 .Flying {
-    background-color: #CCDADD;
+    background: linear-gradient(52.41deg, #CCDADD 4.87%, #879193 94.37%);
 }
 
 .Poison {
-    background-color: #AB00AE;
+    background: linear-gradient(52.41deg, #a84aaa 4.87%, #552256 94.37%);
 }
 
 .Ground {
-    background-color: #965A00;
+    background: linear-gradient(52.41deg, #97794c 4.87%, #5e4828 94.37%);
 }
 
 .Rock {
-    background-color: #E1B237;
+    background: linear-gradient(52.41deg, #d4b76e 4.87%, #75461a 94.37%);
 }
 
 .Bug {
-    background-color: #3BB900;
+    background: linear-gradient(52.41deg, #8dd46c 4.87%, #5fa83d 94.37%);
 }
 
 .Ghost {
-    background-color: #5A1E64;
+    background: linear-gradient(52.41deg, #7d4d85 4.87%, #2b132f 94.37%);
 }
 
 .Steel {
-    background-color: #2A4950;
+    background: linear-gradient(52.41deg, #4f8a97 4.87%, #1b2f33 94.37%);
 }
 
 .Fire {
-    /* background-color: #FF9900; */
-    background: linear-gradient(52.41deg, #fd9401 4.87%, #ff4400 94.37%);
+    background: linear-gradient(52.41deg, #cc7259 4.87%, #de402b 94.37%);
 }
 
 .Water {
-    /* background-color: #00A0E4; */
-    background: linear-gradient(52.41deg, #6dd0fa 4.87%, #0043c8 94.37%);
+    background: linear-gradient(52.41deg, #68adca 4.87%, #4169b9 94.37%);
 }
 
 .Grass {
-    /* background-color: #57921C; */
-    background: linear-gradient(52.41deg, #8efe1e 4.87%, #4c8d0b 94.37%);
+    background: linear-gradient(52.41deg, #a2d370 4.87%, #65a425 94.37%);
 }
 
 .Electric {
-    /* background-color: #FFE600; */
-    background: linear-gradient(52.41deg, #ffe23d 4.87%, #ecbb17 94.37%);
-
+    background: linear-gradient(52.41deg, #f7e57d 4.87%, #e6bf3f 94.37%);
 }
 
 .Psychic {
-    /* background-color: #FF81F2; */
-    background: linear-gradient(52.41deg, #FF81F2 4.87%, #aa0499 94.37%);
+    background: linear-gradient(52.41deg, #e79be0 4.87%, #a33999 94.37%);
 }
 
 .Ice {
-    /* background-color: #6AD2FF; */
-    background: linear-gradient(52.41deg, #98dffd 4.87%, #0090ce 94.37%);
+    background: linear-gradient(52.41deg, #c8eaf9 4.87%, #41a0c8 94.37%);
 }
 
 .Dragon {
-    background-color: #00458A;
-    background: linear-gradient(52.41deg, #0076eb 4.87%, #00458a 94.37%);
+    background: linear-gradient(52.41deg, #7daedf 4.87%, #2a5988 94.37%);
 }
 
 .Dark {
-    background-color: #1C1C1C;
-    background: linear-gradient(52.41deg, #585858 4.87%, #000000 94.37%);
+    background: linear-gradient(52.41deg, #464646 4.87%, #000000 94.37%);
 }
 
 .Fairy {
-    background-color: #FFC2F9;
-    background: linear-gradient(52.41deg, #FFC2F9 4.87%, #ff85f3 94.37%);
+    background: linear-gradient(52.41deg, #f7cbf3 4.87%, #ee97e5 94.37%);
 }
 
 .Unknown {
-    background-color: #B3B3B3;
+    background: linear-gradient(52.41deg, #d8d8d8 4.87%, #717171 94.37%);
 }
 
 .Shadow {
-    background-color: #B3B3B3;
+    background: linear-gradient(52.41deg, #d8d8d8 4.87%, #717171 94.37%);
 }
 
 /* ___________ Dark-Mode_Style _____________________________________ */
@@ -239,10 +229,12 @@
 }
 
 .dark .bg_card .pokemon_card article h2 {
-    background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
+    background: linear-gradient(52.41deg, #4e5b68 4.87%, #001224 94.37%);
+    border: 1px solid rgb(116, 116, 116);
 }
 
 .dark .bg_card .pokemon_card img {
+    background-color: rgba(1, 1, 1, 0.1);
     border-top: 10px solid #1e2327;
     border-left: 10px solid #1e2327;
     border-right: 10px solid #1e2327;
