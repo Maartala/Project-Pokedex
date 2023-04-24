@@ -2,7 +2,7 @@
 
 .background {
     background: #ccdadd;
-    height: 150vh;
+    height: 130vh;
     padding-top: 50px;
 }
 
@@ -12,7 +12,7 @@
     width: 70%;
     max-width: 500px;
     margin: 0 auto;
-    background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
+    /* background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%); */
     padding: 5vh 5vw 10vh 5vw;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -25,7 +25,7 @@
     width: 70%;
     max-width: 500px;
     margin: 0 auto;
-    padding: 1vh 5vw 1vh 5vw;
+    padding: 1rem 4rem 1rem 4rem;
     border: 1px solid rgb(214, 214, 214);
     border-radius: 50px;
     background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
@@ -108,7 +108,6 @@
     transition: width 2s ease-in-out;
 }
 
-
 /* ___________ Stat_Colours ______________________________________________ */
 
 .animation:nth-of-type(1) .fenster p {
@@ -157,7 +156,7 @@
     background-color: #965A00;
 }
 
-.Rock p {
+.Rock {
     background-color: #E1B237;
 }
 
@@ -174,39 +173,49 @@
 }
 
 .Fire {
-    background-color: #FF9900;
+    /* background-color: #FF9900; */
+    background: linear-gradient(52.41deg, #fd9401 4.87%, #ff4400 94.37%);
 }
 
 .Water {
-    background-color: #00A0E4;
+    /* background-color: #00A0E4; */
+    background: linear-gradient(52.41deg, #6dd0fa 4.87%, #0043c8 94.37%);
 }
 
 .Grass {
-    background-color: #57921C;
+    /* background-color: #57921C; */
+    background: linear-gradient(52.41deg, #8efe1e 4.87%, #4c8d0b 94.37%);
 }
 
 .Electric {
-    background-color: #FFE600;
+    /* background-color: #FFE600; */
+    background: linear-gradient(52.41deg, #ffe23d 4.87%, #ecbb17 94.37%);
+
 }
 
 .Psychic {
-    background-color: #FF81F2;
+    /* background-color: #FF81F2; */
+    background: linear-gradient(52.41deg, #FF81F2 4.87%, #aa0499 94.37%);
 }
 
 .Ice {
-    background-color: #6AD2FF;
+    /* background-color: #6AD2FF; */
+    background: linear-gradient(52.41deg, #98dffd 4.87%, #0090ce 94.37%);
 }
 
 .Dragon {
     background-color: #00458A;
+    background: linear-gradient(52.41deg, #0076eb 4.87%, #00458a 94.37%);
 }
 
 .Dark {
-    background-color: #1C1C1C
+    background-color: #1C1C1C;
+    background: linear-gradient(52.41deg, #585858 4.87%, #000000 94.37%);
 }
 
 .Fairy {
     background-color: #FFC2F9;
+    background: linear-gradient(52.41deg, #FFC2F9 4.87%, #ff85f3 94.37%);
 }
 
 .Unknown {
@@ -234,7 +243,6 @@
 }
 
 .dark .bg_card .pokemon_card img {
-    background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
     border-top: 10px solid #1e2327;
     border-left: 10px solid #1e2327;
     border-right: 10px solid #1e2327;
