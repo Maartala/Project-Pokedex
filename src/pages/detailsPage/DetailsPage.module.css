@@ -1,11 +1,12 @@
 /* .Detailspage {} */
 
-
 .background {
     background: #ccdadd;
     height: 150vh;
     padding-top: 50px;
 }
+
+/* ___________Pokemon-Card________________________________________________ */
 
 .pokemon_card img {
     width: 70%;
@@ -30,6 +31,8 @@
     background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
 }
 
+/* ___________Pokemon-Card_Article________________________________________ */
+
 .pokemon_card article {
     width: 70%;
     max-width: 500px;
@@ -40,10 +43,12 @@
     border-bottom-right-radius: 20px;
 }
 
+/* ___________ Types _____________________________________________________ */
+
 .types_flex {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
 }
 
 .types_flex p {
@@ -54,12 +59,16 @@
     color: white;
 }
 
+/* ___________ Weight&Height _____________________________________________ */
+
 .weight {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 50px;
 }
+
+/* ___________ Stats _____________________________________________________ */
 
 .pokemon_card .stats {
     color: rgb(145, 145, 145);
@@ -75,9 +84,6 @@
     display: flex;
     justify-content: space-between;
 }
-
-
-/* ___________Type_Animation_______________________ */
 
 .stats .animation {
     margin: 3px 0;
@@ -102,11 +108,9 @@
     transition: width 2s ease-in-out;
 }
 
-/* .animation:nth-of-type(1) .fenster .hpBar {
-    width: 10%;
-} */
 
-/* _____________________________________________ */
+/* ___________ Stat_Colours ______________________________________________ */
+
 .animation:nth-of-type(1) .fenster p {
     background-color: #3BB900;
 }
@@ -131,7 +135,7 @@
     background-color: #FF81F2;
 }
 
-/* ___________Type_Colors_______________________ */
+/* ___________ Type_Colors _______________________________________________ */
 
 .Normal {
     background-color: #B3B3B3;
@@ -213,10 +217,39 @@
     background-color: #B3B3B3;
 }
 
-/* ------------------------------ */
+/* ___________ Dark-Mode_Style _____________________________________ */
+
 
 .dark {
-    background: rgb(0, 1, 87);
+    background: rgb(20, 20, 20);
+    color: white;
+}
+
+.dark .bg_card .pokemon_card article {
+    background-color: #1e2327;
+}
+
+.dark .bg_card .pokemon_card article h2 {
+    background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
+}
+
+.dark .bg_card .pokemon_card img {
+    background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
+    border-top: 10px solid #1e2327;
+    border-left: 10px solid #1e2327;
+    border-right: 10px solid #1e2327;
+}
+
+.dark .bg_card .pokemon_card article .types_flex p {
+    border: 1px solid rgb(97, 97, 97);
+}
+
+.dark .bg_card .pokemon_card article .stats .animation .fenster {
+    background-color: #242a2f;
+
+}
+
+.dark .bg_card .pokemon_card article .stats .animation p {
     color: white;
 }
 
