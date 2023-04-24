@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import BerriesItem from "./BerriesItem";
 import style from './BerriesList.module.scss'
 import { FilterContext } from "../../pages/mainPage/MainPage.jsx";
