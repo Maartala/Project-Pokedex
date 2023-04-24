@@ -73,8 +73,9 @@ const BerriesDetails = () => {
                 <div>
                     <p>{healthText}</p>
                 </div>
+                <Link to="/berries">Back</Link>
             </article>
-            <Link to="/berries">Back</Link>
+
         </section >
     );
 }

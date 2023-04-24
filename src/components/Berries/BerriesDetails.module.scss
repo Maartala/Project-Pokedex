@@ -1,42 +1,48 @@
 .berriesDetails {
-    box-sizing: border-box;
     width: 350px;
-    margin: 0 auto;
-    background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
-    border-radius: 20px;
-    padding: 1.5rem 1.5rem;
+    margin: 5rem auto;
+
 
     h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    div {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 0.2rem;
-    }
-
-    hr {
-        margin: 0.5rem 0;
-    }
-
-    div:nth-last-of-type(1) {
-        margin-bottom: 2rem;
-        text-align: left;
-    }
-
-    a {
-        text-decoration: none;
-        color: black;
         background-color: white;
-        padding: 0.3rem 1.8rem;
-        border-radius: 15px;
+        border-radius: 20px 20px 0 0;
+        padding: 0.5rem 0;
+    }
 
-        &:hover {
-            background-color: #f9c700;
+    article {
+        background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
+        border-radius: 0 0 20px 20px;
+        padding: 1.5rem 1.5rem;
+
+        div {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 0.2rem;
+        }
+
+        hr {
+            margin: 0.5rem 0;
+        }
+
+        div:nth-last-of-type(1) {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            padding: 0.3rem 1.8rem;
+            border-radius: 15px;
+
+            &:hover {
+                background-color: #f9c700;
+            }
         }
     }
+
+
 }
 
 .dark {

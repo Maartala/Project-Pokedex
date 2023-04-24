@@ -1,9 +1,13 @@
 .pokemonListItem {
-    margin: 5rem auto;
+    margin: 5rem auto 0 auto;
+    width: 250px;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 
     article {
         background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
-        width: 250px;
         border-radius: 20px 20px 0 0;
         padding: 1rem 1.5rem;
 
@@ -17,21 +21,19 @@
     }
 
     div {
-        width: 250px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 0.5rem 1rem;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
-        background-color: #EBEBEB;
+        background-color: white;
     }
 }
 
 .dark {
     article {
         background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
-
     }
 
     div {
