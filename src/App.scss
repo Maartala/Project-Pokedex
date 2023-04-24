@@ -9,4 +9,5 @@
 .App {
   transition-property: background, color;
   transition-duration: 500ms;
+  min-height: 100vh;
 }
