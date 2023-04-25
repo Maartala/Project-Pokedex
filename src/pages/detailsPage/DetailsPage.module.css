@@ -2,8 +2,9 @@
 
 .background {
     background: #ccdadd;
-    /* height: 130vh; */
-    padding: 50px 0 5rem 0;
+    min-height: 75vh;
+    padding-top: 2rem;
+    /* padding-bottom: 10%; */
 }
 
 .bg_card {
@@ -24,7 +25,7 @@
     transform: rotateY(180deg);
     color: white;
     margin: 0 auto;
-    filter: invert(70%);
+    filter: invert(100%);
 }
 
 .bg_card .arrow_left:hover {
@@ -38,7 +39,7 @@
 .bg_card .arrow_right img {
     width: 5rem;
     margin: 0 auto;
-    filter: invert(70%);
+    filter: invert(100%);
 }
 
 .bg_card .arrow_right:hover {
@@ -48,7 +49,7 @@
 /* ___________Pokemon-Card________________________________________________ */
 
 .pokemon_card {
-    background: white;
+    background: rgb(255, 255, 255);
     padding: 0.75rem;
     border-radius: 30px;
     width: clamp(200px, 50%, 500px);
@@ -66,7 +67,7 @@
 }
 
 .pokemon_card h2 {
-    width: clamp(200px, 80%, 500px);
+    width: clamp(350px, 80%, 500px);
     /* max-width: 500px; */
     margin: -3.25rem auto 1rem auto;
     padding: 16px 16px;
@@ -74,6 +75,7 @@
     border-radius: 50px;
     background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
     font-size: 1.8rem;
+    color: black;
 }
 
 /* ___________Pokemon-Card_Article________________________________________ */
@@ -140,7 +142,7 @@
     margin: 3px 0;
 }
 
-.stats .animation > p {
+.stats .animation>p {
     text-align: left;
     width: 80px;
     font-size: 1.2em;
@@ -154,7 +156,7 @@
 
 }
 
-.fenster > p {
+.fenster>p {
     height: 25px;
     width: 10%;
     padding-top: 2px;
@@ -288,10 +290,7 @@
 .dark .bg_card .pokemon_card article h2 {
     background: linear-gradient(52.41deg, #4e5b68 4.87%, #001224 94.37%);
     border: 1px solid rgb(116, 116, 116);
-}
-
-.dark .bg_card .pokemon_card img {
-
+    color: white;
 }
 
 .dark .bg_card .pokemon_card article .types_flex p {

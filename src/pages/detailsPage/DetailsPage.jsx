@@ -256,7 +256,16 @@ const DetailsPage = () => {
 			.then(data => {
 				navigate(`/pokemon/${(pokemon.id - 1)}`, { state: data })
 			})
+
+		if (pokemon.id === 1) {
+			document.querySelector("arrow_left").styles.display = 'none';
+			return (pokemon.id)
+		}
 	}
+
+	// console.log(pokemon.id)
+	// function hideArrowButton() {
+	// }
 
 	// ====== RETURN ===========================================
 
