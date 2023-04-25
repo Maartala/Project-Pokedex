@@ -47,25 +47,29 @@
 
 /* ___________Pokemon-Card________________________________________________ */
 
+.pokemon_card {
+    background: white;
+    padding: 0.75rem;
+    border-radius: 30px;
+    width: clamp(200px, 50%, 500px);
+}
+
 .pokemon_card img {
     aspect-ratio: 1/1;
     height: auto;
-    width: 50rem;
+    width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    padding: 3vh 3vw 5vh 3vw;
+    padding: 3rem;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    border-top: 10px solid white;
-    border-left: 10px solid white;
-    border-right: 10px solid white;
 }
 
 .pokemon_card h2 {
-    width: 25rem;
+    width: clamp(200px, 80%, 500px);
     /* max-width: 500px; */
-    margin: -3rem auto 1rem auto;
-    padding: 1rem 4rem 1rem 4rem;
+    margin: -3.25rem auto 1rem auto;
+    padding: 16px 16px;
     border: 1px solid rgb(214, 214, 214);
     border-radius: 50px;
     background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
@@ -78,8 +82,7 @@
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    background-color: white;
-    padding: 1vh 3vw 1vh 3vw;
+    padding: 16px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -121,7 +124,6 @@
 
 .pokemon_card .stats {
     color: rgb(145, 145, 145);
-    padding-top: 20px;
     margin: 1rem 0;
     display: flex;
     flex-direction: column;
@@ -138,7 +140,9 @@
     margin: 3px 0;
 }
 
-.stats .animation p {
+.stats .animation > p {
+    text-align: left;
+    width: 80px;
     font-size: 1.2em;
 }
 
@@ -147,9 +151,10 @@
     background-color: #dfdfdf;
     border-radius: 10px;
     margin-left: 10px;
+
 }
 
-.fenster p {
+.fenster > p {
     height: 25px;
     width: 10%;
     padding-top: 2px;
@@ -276,7 +281,7 @@
     color: white;
 }
 
-.dark .bg_card .pokemon_card article {
+.dark .pokemon_card {
     background-color: #1e2327;
 }
 
@@ -286,10 +291,7 @@
 }
 
 .dark .bg_card .pokemon_card img {
-    background-color: rgba(1, 1, 1, 0.1);
-    border-top: 10px solid #1e2327;
-    border-left: 10px solid #1e2327;
-    border-right: 10px solid #1e2327;
+
 }
 
 .dark .bg_card .pokemon_card article .types_flex p {
