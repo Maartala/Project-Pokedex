@@ -26,22 +26,8 @@
 		img {
 			width: 30%;
 			margin: 0 auto;
-			padding: 1.5rem 0;
+			padding: 2rem 0;
 			transition: transform 200ms;
-		}
-	}
-
-	a {
-		text-decoration: none;
-		color: black;
-		background-color: white;
-		padding: 0.3rem 1.2rem;
-		border-radius: 15px;
-
-        transition: color 200ms, background-color 200ms;
-
-		&:hover {
-			background: #f9c700
 		}
 	}
 }
