@@ -1,58 +1,62 @@
 .berryItem {
-    margin: 2rem auto 0 auto;
-    width: 250px;
+	margin: 2rem auto 0 auto;
+	width: 250px;
 
+	transition: transform 200ms;
 
-    &:hover {
-        transform: scale(1.1);
-    }
+	&:hover {
+		transform: scale(1.1);
 
-    div {
-        background-color: white;
-        border-radius: 20px 20px 0 0;
-        padding: 0.5rem 0;
-    }
+		img {
+			transform: scale(1.11);
+		}
+	}
 
-    article {
-        background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
-        border-radius: 0 0 20px 20px;
-        padding-bottom: 1.5rem;
+	div {
+		background-color: white;
+		border-radius: 20px 20px 0 0;
+		padding: 0.5rem 0;
+	}
 
-        img {
-            width: 30%;
-            margin: 0 auto;
-            padding: 1.5rem 0;
-        }
-    }
+	article {
+		background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
+		border-radius: 0 0 20px 20px;
+		padding-bottom: 1.5rem;
 
-    a {
-        text-decoration: none;
-        color: black;
-        background-color: white;
-        padding: 0.3rem 1.2rem;
-        border-radius: 15px;
+		img {
+			width: 30%;
+			margin: 0 auto;
+			padding: 1.5rem 0;
+			transition: transform 200ms;
+		}
+	}
 
-        &:hover {
-            background: #f9c700
-        }
-    }
+	a {
+		text-decoration: none;
+		color: black;
+		background-color: white;
+		padding: 0.3rem 1.2rem;
+		border-radius: 15px;
+
+		&:hover {
+			background: #f9c700
+		}
+	}
 }
 
 .dark {
-    div {
-        background-color: dimgrey;
-    }
+	div {
+		background-color: dimgrey;
+	}
 
-    background: rgba(0, 0, 0, 0.05);
+	background: rgba(0, 0, 0, 0.05);
 
-    article {
-        background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
+	article {
+		background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
 
-        a:hover {
-            background: #3a5e82
-        }
-    }
-
-
+		a:hover {
+			background: #3a5e82
+		}
+	}
 
 }

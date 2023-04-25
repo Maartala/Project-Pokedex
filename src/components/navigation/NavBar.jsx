@@ -6,8 +6,8 @@ const NavBar = ({setMenuState}) => {
 	return (
 		<nav className={style.navBar}>
 			<NavButton to="/pokemon" text="Pokemon" setMenuState={setMenuState}/>
-			<NavButton to="/types" text="Types"/>
-			<NavButton to="/berries" text="Berries"/>
+			<NavButton to="/types" text="Types" setMenuState={setMenuState}/>
+			<NavButton to="/berries" text="Berries" setMenuState={setMenuState}/>
 		</nav>
 	);
 };

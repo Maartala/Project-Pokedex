@@ -10,7 +10,7 @@
     font-size: 2rem;
     margin: 4rem auto 2rem auto;
     padding: 1.5rem 3rem;
-    border: solid 1px none;
+
     border-radius: 15px;
     background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
 }
@@ -19,8 +19,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 3% 5%; //display: grid;
-    // grid-template-columns: repeat(2, 1fr);
+    margin: 3% 5%;
     justify-items: center;
     gap: 2rem
 }
@@ -32,12 +31,14 @@
     color: #fff;
     font-weight: 700;
     padding: 1rem 3rem;
-    // margin: 2%;
+
     border-radius: 5px;
     -webkit-box-shadow: inset 0px 0px 17px 13px rgba(0, 0, 0, 0.27);
     box-shadow: inset 0px 0px 17px 13px rgba(0, 0, 0, 0.27);
-    border: solid none 1px;
+
     width: 12rem;
+
+    transition: transform 200ms;
 }
 
 .pokemontypes a:hover {
