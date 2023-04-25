@@ -7,6 +7,8 @@ import arrowBtn from '../../assets/img/icons/next.png'
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
 
+// =============================================================
+
 const DetailsPage = () => {
 
 	// Implementieren eines Darkmodes
@@ -41,8 +43,8 @@ const DetailsPage = () => {
 	if (pokemon.types.length > 1) {
 		fixedTypes2 = pokemon.types[1].type.name[0].toUpperCase() + pokemon.types[1].type.name.slice(1);
 	}
-	console.log(fixedTypes1);
-	console.log(fixedTypes2);
+	// console.log(fixedTypes1);
+	// console.log(fixedTypes2);
 
 	// Zuweisung einer spezifischen Farbe zu jedem Type
 	let type1Class = '';
@@ -179,7 +181,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthHP(pokemon.stats[0].base_stat);
 		}, [pokemon.stats[0].base_stat])
-		return `${(widthHP * 100 / 155)}%`
+		return `${(widthHP * 100 / 180)}%`
 	}
 
 	// ATTACK
@@ -190,7 +192,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthATK(pokemon.stats[1].base_stat);
 		}, [pokemon.stats[1].base_stat])
-		return `${(widthATK * 100 / 155)}%`
+		return `${(widthATK * 100 / 180)}%`
 	}
 
 	// DEFENSE
@@ -201,7 +203,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthDEF(pokemon.stats[2].base_stat);
 		}, [pokemon.stats[2].base_stat])
-		return `${(widthDEF * 100 / 155)}%`
+		return `${(widthDEF * 100 / 180)}%`
 	}
 
 	// SPECIAL-ATTACK
@@ -212,7 +214,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthSPATK(pokemon.stats[3].base_stat);
 		}, [pokemon.stats[3].base_stat])
-		return `${(widthSPATK * 100 / 155)}%`
+		return `${(widthSPATK * 100 / 180)}%`
 	}
 
 	// SPECIAL-DEFENSE
@@ -223,7 +225,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthSPDEF(pokemon.stats[4].base_stat);
 		}, [pokemon.stats[4].base_stat])
-		return `${(widthSPDEF * 100 / 155)}%`
+		return `${(widthSPDEF * 100 / 180)}%`
 	}
 
 	// SPEED
@@ -234,7 +236,7 @@ const DetailsPage = () => {
 		useEffect(() => {
 			setWidthSPD(pokemon.stats[5].base_stat);
 		}, [pokemon.stats[5].base_stat])
-		return `${(widthSPD * 100 / 155)}%`
+		return `${(widthSPD * 100 / 180)}%`
 	}
 
 	// Einfügen einer seitlichen Pfeilnavigation auf der Detailspage
@@ -256,7 +258,7 @@ const DetailsPage = () => {
 			})
 	}
 
-	// ====== RETURN =====================================================
+	// ====== RETURN ===========================================
 
 	return (
 		<section className={classArray.join(" ")}>
