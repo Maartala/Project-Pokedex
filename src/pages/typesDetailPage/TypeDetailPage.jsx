@@ -91,7 +91,7 @@ const TypeDetailPage = () => {
             break;
     }
 
-    console.log(typeDetails);
+    // console.log(typeDetails);
 
     return (
         <div className={classArray.join(" ")} >
@@ -246,7 +246,6 @@ const TypeDetailPage = () => {
                                         )
                                     }
                                     )}
-
 
                                 </article>
                             </article>

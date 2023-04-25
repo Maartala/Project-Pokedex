@@ -21,7 +21,6 @@ const PokemonTypes = () => {
 			.then(data => setAllTypes(data.results))
 	}, []);
 
-
 	// console.log(allTypes);
 
 	return (
