@@ -8,7 +8,7 @@ import { FilterContext } from "../../../pages/mainPage/MainPage";
 
 const TypesList = ({ pokemon }) => {
 
-    const filter = useContext(FilterContext)
+    const filterObject = useContext(FilterContext)
 
     // DarkMode 
     const isDarkModeEnabled = useContext(ThemeContext)
@@ -40,9 +40,10 @@ const TypesList = ({ pokemon }) => {
                 if (elt.sprites.other.dream_world.front_default === null || elt.id > 1000) {
                     return
                 }
-                if (elt.name.includes(filter)) {
+                if (elt.name.includes(filterObject.filter)) {
                     return (<PokemonListItem key={elt.id} name={pokemon[index].pokemon.name} url={pokemon[index].pokemon.url} />)
                 }
+
             })}
         </div>
     );
