@@ -43,8 +43,6 @@ const TypesList = ({ pokemon }) => {
                 if (elt.name.includes(filter)) {
                     return (<PokemonListItem key={elt.id} name={pokemon[index].pokemon.name} url={pokemon[index].pokemon.url} />)
                 }
-
-
             })}
         </div>
     );
