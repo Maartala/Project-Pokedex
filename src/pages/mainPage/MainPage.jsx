@@ -66,7 +66,7 @@ const MainPage = ({ isDarkModeEnabled, setIsDarkModeEnabled }) => {
 					<button onClick={() => setIsMenuExpanded(!isMenuExpanded)}>
 						<img src={hamburgerMenuIcon} alt="Menu" />
 					</button>
-					<input type="text" onChange={handleSearch} />
+					<input type="text" onChange={handleSearch} placeholder={"Search a Pokemon"}/>
 					<button onClick={toggleTheme} id="toggleThemeButton">
 						<img
 							src={isDarkModeEnabled ? lightThemeIcon : darkThemeIcon}

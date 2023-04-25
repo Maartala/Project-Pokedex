@@ -2,8 +2,8 @@
 
 .background {
     background: #ccdadd;
-    height: 130vh;
-    padding-top: 50px;
+    /* height: 130vh; */
+    padding: 50px 0 5rem 0;
 }
 
 .bg_card {
@@ -48,6 +48,8 @@
 /* ___________Pokemon-Card________________________________________________ */
 
 .pokemon_card img {
+    aspect-ratio: 1/1;
+    height: auto;
     width: 50rem;
     max-width: 500px;
     margin: 0 auto;
@@ -60,9 +62,9 @@
 }
 
 .pokemon_card h2 {
-    width: 100%;
-    max-width: 500px;
-    margin: -2.5rem auto 1rem auto;
+    width: 25rem;
+    /* max-width: 500px; */
+    margin: -3rem auto 1rem auto;
     padding: 1rem 4rem 1rem 4rem;
     border: 1px solid rgb(214, 214, 214);
     border-radius: 50px;

@@ -28,47 +28,47 @@ const BerriesDetails = () => {
             <h2>{berryName}</h2>
             <article>
                 <div>
-                    <p>Category: </p>
+                    <h4>Category: </h4>
                     <p>{json2.category.name}</p>
                 </div>
                 <hr />
                 <div>
-                    <p>Size: </p>
+                    <h4>Size: </h4>
                     <p>{json.size}</p>
                 </div>
                 <div>
-                    <p>Growth time: </p>
+                    <h4>Growth time: </h4>
                     <p>{json.growth_time}</p>
                 </div>
                 <div>
-                    <p>Max harvest: </p>
+                    <h4>Max harvest: </h4>
                     <p>{json.max_harvest}</p>
                 </div>
                 <hr />
                 <div>
-                    <p>Firmness: </p>
+                    <h4>Firmness: </h4>
                     <p>{json.firmness.name}</p>
                 </div>
                 <div>
-                    <p>Smoothness: </p>
+                    <h4>Smoothness: </h4>
                     <p>{json.smoothness}</p>
                 </div>
                 <div>
-                    <p>Soil dryness: </p>
+                    <h4>Soil dryness: </h4>
                     <p>{json.soil_dryness}</p>
                 </div>
                 <hr />
                 <div>
-                    <p>Natural gift power: </p>
+                    <h4>Natural gift power: </h4>
                     <p>{json.natural_gift_power}</p>
                 </div>
                 <div>
-                    <p>Natural gift type: </p>
+                    <h4>Natural gift type: </h4>
                     <p>{json.natural_gift_type.name}</p>
                 </div>
                 <hr />
                 <div>
-                    <p>Health:</p>
+                    <h4>Health:</h4>
                 </div>
                 <div>
                     <p>{healthText}</p>

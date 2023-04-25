@@ -1,7 +1,8 @@
 .berriesDetails {
     width: 350px;
-    margin: 5rem auto;
-
+    margin: 0 auto;
+    padding: 5rem 0;
+    background-color: #CCDADD;
 
     h2 {
         background-color: white;
@@ -35,6 +36,7 @@
             background-color: white;
             padding: 0.3rem 1.8rem;
             border-radius: 15px;
+            margin-bottom: 2rem;
 
             &:hover {
                 background-color: #f9c700;
@@ -46,9 +48,17 @@
 }
 
 .dark {
-    background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
+    background-color: rgba(0, 0, 0, 0.05);
 
-    a:hover {
-        background-color: #3a5e82;
+    h2 {
+        background-color: dimgrey;
+    }
+
+    article {
+        background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
+
+        a:hover {
+            background-color: #3a5e82;
+        }
     }
 }
