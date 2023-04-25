@@ -7,8 +7,10 @@
     &:hover {
         transform: scale(1.1);
 
+
         img {
             transform: scale(1.11);
+            cursor: url("../../assets/img/icons/pokemon-ball-open.png") 16 16, auto;
         }
     }
 
