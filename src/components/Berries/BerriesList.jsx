@@ -6,7 +6,7 @@ import { FilterContext } from "../../pages/mainPage/MainPage";
 const BerriesList = () => {
 
     const [berries, setBerries] = useState([])
-    const filter = useContext(FilterContext)
+    const filterObject = useContext(FilterContext)
 
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/berry`)
@@ -15,16 +15,17 @@ const BerriesList = () => {
                 setBerries(json.results)
             });
     }, [])
-    // console.log(berries);
+    console.log(berries);
     return (
         <div className={style.berriesList}>
             {berries.map((element, index) => {
-                if (element.name.includes(filter))
+                if (element.name.includes(filterObject.filter))
                     return (
                         <BerriesItem
                             key={index}
                             name={element.name}
                             url={element.url}
+                            setFilter={filterObject.setFilter}
                         />
                     )
             })}

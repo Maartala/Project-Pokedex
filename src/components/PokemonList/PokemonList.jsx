@@ -6,7 +6,7 @@ import { FilterContext } from "../../pages/mainPage/MainPage.jsx";
 const PokemonList = () => {
 
 	const [pokemon, setPokemon] = useState([])
-	const filter = useContext(FilterContext)
+	const filterObject = useContext(FilterContext)
 
 	useEffect(() => {
 		fetch(`https://pokeapi.co/api/v2/pokemon?limit=100`)
@@ -21,7 +21,7 @@ const PokemonList = () => {
 	return (
 		<section className={style.PokemonList} >
 			{pokemon.map((element, index) => {
-				if (element.name.includes(filter))
+				if (element.name.includes(filterObject.filter))
 					return (
 						<PokemonListItem
 							key={index}

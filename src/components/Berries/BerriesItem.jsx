@@ -46,7 +46,7 @@ const BerriesItem = (props) => {
                 <h2>{berryName}</h2>
             </div>
             <article>
-                <Link to={`/berries/${id}`} state={berriesDetails}><img src={pic} alt={berryName} /></Link>
+                <Link to={`/berries/${id}`} state={berriesDetails}  ><img src={pic} alt={berryName} /></Link>
             </article>
         </section>
     );
