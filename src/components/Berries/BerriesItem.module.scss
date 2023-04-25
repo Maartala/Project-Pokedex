@@ -1,6 +1,7 @@
 .berryItem {
-    margin: 5rem auto 0 auto;
+    margin: 2rem auto 0 auto;
     width: 250px;
+
 
     &:hover {
         transform: scale(1.1);
@@ -38,9 +39,20 @@
 }
 
 .dark {
-    background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
-
-    a:hover {
-        background: #3a5e82
+    div {
+        background-color: dimgrey;
     }
+
+    background: rgba(0, 0, 0, 0.05);
+
+    article {
+        background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
+
+        a:hover {
+            background: #3a5e82
+        }
+    }
+
+
+
 }

@@ -9,7 +9,7 @@ const PokemonList = () => {
 	const filter = useContext(FilterContext)
 
 	useEffect(() => {
-		fetch(`https://pokeapi.co/api/v2/pokemon?limit=50`)
+		fetch(`https://pokeapi.co/api/v2/pokemon?limit=100`)
 			.then(response => response.json())
 			.then(json => {
 				setPokemon(json.results)
