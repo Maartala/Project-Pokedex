@@ -9,7 +9,7 @@ import hamburgerMenuIcon from "../../assets/img/icons/hamburger-menu-icon.svg";
 import lightThemeIcon from "../../assets/img/icons/light-theme-icon.svg";
 import darkThemeIcon from "../../assets/img/icons/dark-theme-icon.svg";
 
-export const FilterContext = createContext("");
+export const FilterContext = createContext({});
 
 const MainPage = ({ isDarkModeEnabled, setIsDarkModeEnabled }) => {
 	const location = useLocation();
@@ -53,37 +53,41 @@ const MainPage = ({ isDarkModeEnabled, setIsDarkModeEnabled }) => {
 
 	const classArray = [styles.mainPage, isDarkModeEnabled ? styles.dark : null]
 	return (
-		<div
-			id="mainPage"
-			className={classArray.join(" ")}
-			onClick={handleMenuBack}
-		>
-			<header>
-				<Link to="/pokemon">
-					<img src={pokemonTitle} alt="Pokemon" />
-				</Link>
-				<section>
-					<button onClick={() => setIsMenuExpanded(!isMenuExpanded)}>
-						<img src={hamburgerMenuIcon} alt="Menu" />
-					</button>
-					<input type="text" onChange={handleSearch} placeholder={"Search a Pokemon"}/>
-					<button onClick={toggleTheme} id="toggleThemeButton">
-						<img
-							src={isDarkModeEnabled ? lightThemeIcon : darkThemeIcon}
-							alt="theme-toggle"
-						/>
-					</button>
-				</section>
-			</header>
+    <div
+      id="mainPage"
+      className={classArray.join(" ")}
+      onClick={handleMenuBack}
+    >
+      <header>
+        <Link to="/pokemon">
+          <img src={pokemonTitle} alt="Pokemon" />
+        </Link>
+        <section>
+          <button onClick={() => setIsMenuExpanded(!isMenuExpanded)}>
+            <img src={hamburgerMenuIcon} alt="Menu" />
+          </button>
+          <input
+            type="text"
+            onChange={handleSearch}
+            placeholder={"Search a Pokemon"}
+          />
+          <button onClick={toggleTheme} id="toggleThemeButton">
+            <img
+              src={isDarkModeEnabled ? lightThemeIcon : darkThemeIcon}
+              alt="theme-toggle"
+            />
+          </button>
+        </section>
+      </header>
 
-			<aside id="typeMenu">
-				<NavBar setMenuState={setIsMenuExpanded} />
-			</aside>
-			<FilterContext.Provider value={filter}>
-				<Outlet />
-			</FilterContext.Provider>
-		</div>
-	);
+      <aside id="typeMenu">
+        <NavBar setMenuState={setIsMenuExpanded} />
+      </aside>
+      <FilterContext.Provider value={{ filter, setFilter }}>
+        <Outlet />
+      </FilterContext.Provider>
+    </div>
+  );
 };
 
 export default MainPage;
