@@ -32,12 +32,15 @@
 				height: 3em;
 				padding: 8px;
 				background: rgba(255, 255, 255, 1);
+				border: none;
+				outline: 2px solid transparent;
 
-				transition: transform 200ms, background 200ms;
+				transition: transform 200ms, background 200ms, outline 200ms;
 
 				&:hover {
 					background: rgba(220, 220, 250, 1);
 					transform: scale(1.1);
+					outline: 2px solid rgba(0, 0, 0, 0.4);
 				}
 
 				img {
@@ -55,6 +58,16 @@
 				font-weight: 700;
 				font-size: 1.4rem;
 				max-height: 50px;
+
+				border: none;
+				outline: 2px solid transparent;
+
+				transition: background 200ms, outline 200ms;
+
+				&:hover {
+					background: rgb(220, 220, 220);
+					outline: 2px solid rgba(0, 0, 0, 0.4);
+				}
 			}
 		}
 	}
@@ -83,13 +96,24 @@
 		section {
 			button {
 				background: rgb(20, 20, 20);
+				outline: 2px solid rgba(255, 255, 255, 0.1);
 
 				&:hover {
 					background: rgba(30, 30, 30, 1);
+					outline: 2px solid rgba(255, 255, 255, 0.2);
 				}
 
 				img {
 					filter: invert(100%) brightness(100%) saturate(0);
+				}
+			}
+
+			input[type="text"] {
+				background: rgba(50, 50, 50, 1);
+
+				&:hover {
+					background: rgb(70, 70, 70);
+					outline: 2px solid rgba(255, 255, 255, 0.4);
 				}
 			}
 		}

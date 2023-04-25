@@ -38,6 +38,8 @@
 		padding: 0.3rem 1.2rem;
 		border-radius: 15px;
 
+        transition: color 200ms, background-color 200ms;
+
 		&:hover {
 			background: #f9c700
 		}
