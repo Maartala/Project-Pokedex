@@ -28,7 +28,7 @@ const TypesList = ({ pokemon }) => {
             }
             )
         ).then(data => {
-            console.log(data);
+            // console.log(data);
 
             setPokemonDetails(data);
         });

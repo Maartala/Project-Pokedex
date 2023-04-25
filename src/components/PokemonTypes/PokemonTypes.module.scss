@@ -8,7 +8,7 @@
     color: #2C72B8;
     font-weight: bolder;
     font-size: 2rem;
-    margin: 7rem auto 2rem auto;
+    margin: 4rem auto 2rem auto;
     padding: 1.5rem 3rem;
     border: solid 1px none;
     border-radius: 15px;
@@ -36,9 +36,12 @@
     border-radius: 5px;
     -webkit-box-shadow: inset 0px 0px 17px 13px rgba(0, 0, 0, 0.27);
     box-shadow: inset 0px 0px 17px 13px rgba(0, 0, 0, 0.27);
-    ;
     border: solid none 1px;
     width: 12rem;
+}
+
+.pokemontypes a:hover {
+    transform: scale(1.2);
 }
 
 .pokemontypes a:nth-of-type(1) {
@@ -128,6 +131,10 @@ DARK MODE
         background: linear-gradient(52.41deg, #BFDFFF 4.87%, #001224 94.37%);
         color: #000000;
         color: #fff;
+    }
 
+    a {
+        -webkit-box-shadow: 1px 1px 19px 2px rgba(255, 255, 255, 0.31);
+        box-shadow: 1px 1px 19px 2px rgba(255, 255, 255, 0.31);
     }
 }
