@@ -2,7 +2,6 @@
     padding-bottom: 12%;
 }
 
-
 .pokemontypes h2 {
     width: 17rem;
     color: #2C72B8;
@@ -10,7 +9,6 @@
     font-size: 2rem;
     margin: 4rem auto 2rem auto;
     padding: 1.5rem 3rem;
-
     border-radius: 15px;
     background: linear-gradient(52.41deg, #FFE1C6 4.87%, #FFCB05 94.37%);
 }
@@ -24,20 +22,16 @@
     gap: 2rem
 }
 
-
 .pokemontypes a {
     text-decoration: none;
     text-transform: uppercase;
     color: #fff;
     font-weight: 700;
     padding: 1rem 3rem;
-
     border-radius: 5px;
     -webkit-box-shadow: inset 0px 0px 17px 13px rgba(0, 0, 0, 0.27);
     box-shadow: inset 0px 0px 17px 13px rgba(0, 0, 0, 0.27);
-
     width: 12rem;
-
     transition: transform 200ms;
 }
 
@@ -116,7 +110,6 @@
 .pokemontypes a:nth-of-type(18) {
     background-color: #FFC2F9;
 }
-
 
 /* =================================
 DARK MODE
