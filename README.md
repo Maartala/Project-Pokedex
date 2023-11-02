@@ -1,5 +1,6 @@
 # Project-Pokedex
 
-You can see the result here:
+Teamproject during the Bootcamp.
 
-https://incandescent-blini-fab132.netlify.app/pokemon
+You can see the result here:
+https://incandescent-blini-fab132.netlify.app/
